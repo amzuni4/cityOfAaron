@@ -1,5 +1,5 @@
 /*
-/* The main() class file for the cityOfAaron project
+/* The Fruits() enum file for the cityOfAaron project
  * CIT-260
  * Fall 2018
  *  Team members: Amy Zuniga, Jeremi Lynch, Raylee Haws
@@ -10,7 +10,9 @@ package model;
  *
  * @author admin
  */
-public enum Fruits {
+import java.io.Serializable;
+
+public enum Fruits  implements Serializable {
     APPLE("Apple", "red"),   
     BANANA("Banana", "yellow"), 
     PLUMB("Plumb", "purple");

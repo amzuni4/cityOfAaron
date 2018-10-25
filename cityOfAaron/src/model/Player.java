@@ -1,21 +1,21 @@
 /*
- * The main() class file for the cityOfAaron project
+ * The player() class file for the cityOfAaron project
  * CIT-260
  * Fall 2018
  *  Team members: Amy Zuniga, Jeremi Lynch, Raylee Haws
  */
 package model;
-
+import java.io.Serializable;
 /**
  *
  * @author admin
  */
-public class Player {
+public class Player implements Serializable {
     private String name;
     
     
   
-    public Player(){}
+    public Player(){} //empty constuctor for javabean
     
    public void setName(String name){
         
@@ -26,4 +26,5 @@ public class Player {
     {
           return name; //does not take anything from user 
     }  
+   
 }

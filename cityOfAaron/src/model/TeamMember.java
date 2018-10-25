@@ -3,17 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package model;
 
 /**
  *
  * @author admin
  */
-public enum TeamMember {
+import java.io.Serializable;
+
+public enum TeamMember implements Serializable{
     
-    MEMBER1("Amy", "12/6"),   
-    MEMBER2("Jeremi", "Victory"), 
-    MEMBER3("Raylee", "Singer");
+    MEMBER1("Amy", "Gollum"),   
+    MEMBER2("Jeremi", "Sam"), 
+    MEMBER3("Raylee", "Frodo");
     //data members
     private String name;
     private String title;
