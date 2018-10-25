@@ -22,14 +22,15 @@ public class CropControlTest {
     public void testSellLand() {
        System.out.println("sellLand -  Test Case 1");
        CropData cropData = new CropData();
-        cropData.setAcresOwned(2800);
+        cropData.setAcresOwned(2000);
         
-        int landPrice = 20;
-        int acresToSell = 10;
-        int expResult = 2790;
+        int landPrice = 10;
+        int acresToSell = 0;
+        int expResult = 2000;
         int result = CropControl.sellLand(landPrice, acresToSell, cropData);
         assertEquals(expResult, result);
     }
+
     
     
         
@@ -44,16 +45,16 @@ public class CropControlTest {
        CropData cropData = new CropData();
        
         
-        int acresToBuy = 30;
-        int landPrice = 10;
-        int wheatInStore = 500;
-        int acresOwned = 30;
+        int acresToBuy = 10;
+        int landPrice = 20;
+        int wheatInStore = 800;
+        int acresOwned = 2800;
                 
-        int expResult = 330;
+        int expResult = 2810;
         int result = CropControl.buyLand(acresToBuy, landPrice, wheatInStore, acresOwned, cropData);
         assertEquals(expResult, result);
-    }
     
+}
         /**
      * Test of buyLand method, of class CropControl.
      * Author: Amy Zuniga, Jeremi Lynch, Raylee Haws
@@ -67,14 +68,14 @@ public class CropControlTest {
         
         int acresToBuy = -5;
         int landPrice = 20;
-        int wheatInStore = 30;
-        int acresOwned = 50;
+        int wheatInStore = 800;
+        int acresOwned = 2800;
                 
         int expResult = -1;
         int result = CropControl.buyLand(acresToBuy, landPrice, wheatInStore, acresOwned, cropData);
         assertEquals(expResult, result);
-    }
-       
+    
+}
     /**
      * Test of buyLand method, of class CropControl.
      * Author: Amy Zuniga, Jeremi Lynch, Raylee Haws
@@ -87,15 +88,16 @@ public class CropControlTest {
        CropData cropData = new CropData();
        
         
-        int acresToBuy = 3;
+        int acresToBuy = 3000;
         int landPrice = 20;
-        int wheatInStore = 5;
-        int acresOwned = 1;
+        int wheatInStore = 800;
+        int acresOwned = 2800;
                 
         int expResult = -1;
         int result = CropControl.buyLand(acresToBuy, landPrice, wheatInStore, acresOwned, cropData);
         assertEquals(expResult, result);
-    }
+    
+}
     
     /**
      * Test of buyLand method, of class CropControl.
@@ -109,15 +111,16 @@ public class CropControlTest {
        CropData cropData = new CropData();
        
         
-        int acresToBuy = 30;
-        int landPrice = 0;
-        int wheatInStore = 900;
-        int acresOwned = 100;
+        int acresToBuy = 40;
+        int landPrice = 20;
+        int wheatInStore = 800;
+        int acresOwned = 2000;
                 
-        int expResult = 100;
+        int expResult = 2040;
         int result = CropControl.buyLand(acresToBuy, landPrice, wheatInStore, acresOwned, cropData);
         assertEquals(expResult, result);
     }
+
     
     
     /**
@@ -132,16 +135,16 @@ public class CropControlTest {
        CropData cropData = new CropData();
        
         
-        int acresToBuy = 2;
-        int landPrice = 1;
-        int wheatInStore = 2;
-        int acresOwned = 1;
+        int acresToBuy = 0;
+        int landPrice = 20;
+        int wheatInStore = 800;
+        int acresOwned = 2000;
                 
-        int expResult = 3;
+        int expResult = 2000;
         int result = CropControl.buyLand(acresToBuy, landPrice, wheatInStore, acresOwned, cropData);
         assertEquals(expResult, result);
     }
-    
+
     
     
     
@@ -149,7 +152,7 @@ public class CropControlTest {
 /**
      * Test of plantCrops method, of class CropControl.
      * Author: Amy Zuniga
-     * Test Case 1
+     * Test Case 1 : returns remaining wheat
      */
     
      @Test
@@ -158,22 +161,24 @@ public class CropControlTest {
         CropData cropData = new CropData();
         
         
-        int acresToPlant = 10;
+        int acresToPlant = 5;
         int acresOwned = 20;
         int thePopulation = 150;
-        int currentBushels = 50;
-               
-        int expResult = 8;
+        int currentBushels = 25;
+           
+        int expResult = 23;
         
         int result = CropControl.plantCrops(acresToPlant, acresOwned, thePopulation, currentBushels, cropData);
+        System.out.println(result);
         assertEquals(expResult, result);
-        
-    }
+        //System.out.println(result);
+    
+}
     
     /**
      * Test of plantCrops method, of class CropControl.
      * Author: Amy Zuniga
-     * Test Case 2
+     * Test Case 2 : remaining wheat
      */
     
      @Test
@@ -198,7 +203,7 @@ public class CropControlTest {
         /**
      * Test of plantCrops method, of class CropControl.
      * Author: Amy Zuniga
-     * Test Case 3
+     * Test Case 3 : remaining wheat
      */
     
      @Test
@@ -222,7 +227,7 @@ public class CropControlTest {
         /**
      * Test of plantCrops method, of class CropControl.
      * Author: Amy Zuniga
-     * Test Case 4
+     * Test Case 4: returns remainingWheat
      */
     
      @Test
@@ -232,11 +237,11 @@ public class CropControlTest {
         
         
         int acresToPlant = 10;
-        int acresOwned = 10;
-        int thePopulation = 120;
+        int acresOwned = 20;
+        int thePopulation = 100;
         int currentBushels = 34;
                
-        int expResult = 8;
+        int expResult = 29;
         
         int result = CropControl.plantCrops(acresToPlant, acresOwned, thePopulation, currentBushels, cropData);
         assertEquals(expResult, result);
@@ -246,10 +251,10 @@ public class CropControlTest {
         /**
      * Test of plantCrops method, of class CropControl.
      * Author Amy Zuniga
-     * Test Case 5
+     * Test Case 5 returns remaining wheat
      */
     
-     @Test
+     @Test 
     public void testPlantCrops5() {
         System.out.println("plantCrops -  Test Case 1");
         CropData cropData = new CropData();
@@ -260,7 +265,7 @@ public class CropControlTest {
         int thePopulation = 5;
         int currentBushels = 7;
                
-        int expResult = 0;
+        int expResult = 7;
         
         int result = CropControl.plantCrops(acresToPlant, acresOwned, thePopulation, currentBushels, cropData);
         assertEquals(expResult, result);

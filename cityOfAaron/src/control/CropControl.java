@@ -80,18 +80,13 @@ public static int buyLand(int acresToBuy, int landPrice, int wheatInStore,
    // If acresToBuy < 0, return -1;
     if(acresToBuy <0)
         return -1;
-    //If wheatInStore <= landPrice, return -1;
-    if(acresToBuy <= landPrice)
+ //If wheatInStore < (landPrice * acresToBuy), return -1;
+    if(wheatInStore < (landPrice * acresToBuy))
         return -1;
-    //acresToBuy = acresToBuy * landPrice;
-    acresToBuy = acresToBuy * landPrice;
-    //If acresToBuy > wheatInStore, return -1;
-    if(acresToBuy > wheatInStore)
-        return -1;
-    //acresOwned = (acresOwned + acresToBuy)
+//acresOwned = (acresOwned + acresToBuy)
      acresOwned = (acresOwned + acresToBuy);
     //wheatInStore = wheatInStore – (acresToBuy *  landPrice)
-     wheatInStore = wheatInStore - acresToBuy;
+     wheatInStore = wheatInStore - (acresToBuy * landPrice);
      cropData.setWheatInStore(wheatInStore);
      cropData.setAcresOwned(acresOwned);
     //Return acresOwned;
@@ -146,7 +141,7 @@ cropData.setAcresPlanted(acresPlanted);
 cropData.setWheatInStore(remainingWheat);
 
 //Return acresPlanted and remainingWheat;
- return (acresPlanted & remainingWheat); 
+ return remainingWheat;//acresPlanted; //& remainingWheat; 
 
 
 }
