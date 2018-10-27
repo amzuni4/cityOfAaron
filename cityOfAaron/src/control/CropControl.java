@@ -141,7 +141,7 @@ cropData.setAcresPlanted(acresPlanted);
 cropData.setWheatInStore(remainingWheat);
 
 //Return acresPlanted and remainingWheat;
- return remainingWheat;//acresPlanted; //& remainingWheat; 
+ return remainingWheat + acresPlanted; 
 
 
 }

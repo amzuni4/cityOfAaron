@@ -166,7 +166,7 @@ public class CropControlTest {
         int thePopulation = 150;
         int currentBushels = 25;
            
-        int expResult = 23;
+        int expResult = 28;
         
         int result = CropControl.plantCrops(acresToPlant, acresOwned, thePopulation, currentBushels, cropData);
         System.out.println(result);
@@ -174,6 +174,9 @@ public class CropControlTest {
         //System.out.println(result);
     
 }
+    
+    
+    
     
     /**
      * Test of plantCrops method, of class CropControl.
@@ -241,7 +244,7 @@ public class CropControlTest {
         int thePopulation = 100;
         int currentBushels = 34;
                
-        int expResult = 29;
+        int expResult = 39;
         
         int result = CropControl.plantCrops(acresToPlant, acresOwned, thePopulation, currentBushels, cropData);
         assertEquals(expResult, result);
