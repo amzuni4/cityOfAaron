@@ -6,12 +6,14 @@
  */
 package model;
  import java.io.Serializable;
+import cityofaaron.CityOfAaron;
 /**
  *
  * @author admin
  */
 public class Game implements Serializable {
     private Player thePlayer;
+    private CropData theCropData;
             //type then name
     //always write the typ of the variable at the end 
   
@@ -26,4 +28,13 @@ public class Game implements Serializable {
     {
           return thePlayer; //does not take anything from user 
     }  
+    public void setCropData(CropData theCropData){
+        this.theCropData = theCropData;
+    }
+    public CropData getCropData()
+    {
+        return theCropData;
+    }
+
+    
 }

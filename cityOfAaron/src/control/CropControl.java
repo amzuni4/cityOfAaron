@@ -146,6 +146,46 @@ cropData.setWheatInStore(remainingWheat);
 
 }
 
+     /**
+ * Author: Raylee Haws
+ * The feedPeople Method 
+ * Purpose: 
+ * To set aside wheat to feed people
+ * Parameters: 
+ * The needed number of bushels,
+ * the amount of wheat in store,
+ * and a reference to the CropData object.
+ * Returns: 
+ * The remaining amount of wheat in store and the bushels set aside to feed the people.
+ * Pre-Conditions: 
+ * The needed number of bushels must be positive,
+ * the wheat in store must be positive
+ * and greater than the needed number of bushels. 
+ */
+    
+    public static int feedPeople(int neededNumOfBushels, int wheatInStore, int remainingWheat, 
+        int bushelsSetAside, CropData cropData)
+{
+   // If neededNumOfBushels < 0, return -1; invalid entry 
+    if(neededNumOfBushels <0)
+        return -1;
+    // If wheatInStore < 0, return -1; 
+    if(wheatInStore <0)
+        return -1;
+    // If wheatInStore < neededNumOfBushels, return -1;
+    if(wheatInStore < neededNumOfBushels)
+        return -1;
+     //remainingWheat = (wheatInStore - neededNumOfBushels)
+     remainingWheat = (wheatInStore - neededNumOfBushels);
+    //bushelsSetAside = neededNumOfBushels
+     bushelsSetAside = neededNumOfBushels;
+     cropData.setWheatInStore(wheatInStore);
+    //returns remaining wheat
+     return remainingWheat;
+     
+}
+
+
 
 
 }

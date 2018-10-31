@@ -9,28 +9,43 @@ import model.*; //calling everything in model
 //import model.CropData;
 
  import java.io.Serializable;
+import view.*;
 /**
  *
  * @author admin
  */
 public class CityOfAaron implements Serializable {
-
+      //variable for keeping a reference to the Game object
+        private static Game theGame = null;
+        
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
+      
         
+        MainMenuView mmv = new MainMenuView();
+        mmv.displayMenuView();
+        
+        
+    
         Player player = new Player(); //new instance for Player
-        
-        player.setName("Amy"); //pulling team member
-        
+         player.setName("Amy"); //pulling team member
         Game game = new Game();
         game.setPlayer(player); 
         System.out.println("Name: " + game.getPlayer().getName()); //game = the new instance; getPlayer is from function in player class
                                                                   //runs game and the get player and retrieve getName since its a string
        System.out.println(TeamMember.MEMBER1.getName()+ ": " 
                + TeamMember.MEMBER1.getTitle()); 
+       
+       
+        
+       
+       
+       
+       
+        
        
        //code by Amy:
        
@@ -66,5 +81,16 @@ public class CityOfAaron implements Serializable {
              tool.setName("Hammer");
              tool.setNumber(5);
              System.out.println("Tool: " + tool.getName()+ " Quantity: " + tool.getNumber());
+    
+    
     }
+    
+        public void setGame(Game theGame){
+                this.theGame = theGame;
+        }
+        
+        public Game getGame()
+     {
+         return theGame;
+     }
 }

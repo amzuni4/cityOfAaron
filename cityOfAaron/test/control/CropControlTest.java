@@ -274,4 +274,119 @@ public class CropControlTest {
         assertEquals(expResult, result);
         
     }
+    
+    /**
+     * Test of feedPeople method, of class CropControl.
+     * Author: Raylee Haws
+     * Test Case 1 : returns remaining wheat
+     */
+    
+    @Test 
+    public void testfeedPeople1() {
+        System.out.println("feedPeople -  Test Case 1");
+        CropData cropData = new CropData();
+        
+        
+        int neededNumOfBushels = 7;
+        int wheatInStore = 10;
+        int remainingWheat = 3;
+        int bushelsSetAside = 7;
+                
+        int expResult = 3; 
+        
+        int result = CropControl.feedPeople(neededNumOfBushels, wheatInStore, remainingWheat, bushelsSetAside, cropData);
+        assertEquals(expResult, result);
+}
+    /**
+     * Test of feedPeople method, of class CropControl.
+     * Author: Raylee Haws
+     * Test Case 2 : returns remaining wheat
+     */
+    
+    @Test 
+    public void testfeedPeople2() {
+        System.out.println("feedPeople -  Test Case 2");
+        CropData cropData = new CropData();
+        
+        
+        int neededNumOfBushels = 11;
+        int wheatInStore = 2;
+        int remainingWheat = -1;
+        int bushelsSetAside = -1;
+                
+        int expResult = -1; 
+        
+        int result = CropControl.feedPeople(neededNumOfBushels, wheatInStore, remainingWheat, bushelsSetAside, cropData);
+        assertEquals(expResult, result);
+}
+    
+    /**
+     * Test of feedPeople method, of class CropControl.
+     * Author: Raylee Haws
+     * Test Case 3 : returns remaining wheat
+     */
+    
+    @Test 
+    public void testfeedPeople3() {
+        System.out.println("feedPeople -  Test Case 3");
+        CropData cropData = new CropData();
+        
+        
+        int neededNumOfBushels = -3;
+        int wheatInStore = 10;
+        int remainingWheat = -1;
+        int bushelsSetAside = -1;
+                
+        int expResult = -1; 
+        
+        int result = CropControl.feedPeople(neededNumOfBushels, wheatInStore, remainingWheat, bushelsSetAside, cropData);
+        assertEquals(expResult, result);
+}
+    
+    /**
+     * Test of feedPeople method, of class CropControl.
+     * Author: Raylee Haws
+     * Test Case 4 : returns remaining wheat
+     */
+    
+    @Test 
+    public void testfeedPeople4() {
+        System.out.println("feedPeople -  Test Case 4");
+        CropData cropData = new CropData();
+        
+        
+        int neededNumOfBushels = 10;
+        int wheatInStore = 10;
+        int remainingWheat = 0;
+        int bushelsSetAside = 10;
+                
+        int expResult = 0; 
+        
+        int result = CropControl.feedPeople(neededNumOfBushels, wheatInStore, remainingWheat, bushelsSetAside, cropData);
+        assertEquals(expResult, result);
+}
+    
+    /**
+     * Test of feedPeople method, of class CropControl.
+     * Author: Raylee Haws
+     * Test Case 5 : returns remaining wheat
+     */
+    
+    @Test 
+    public void testfeedPeople5() {
+        System.out.println("feedPeople -  Test Case 5");
+        CropData cropData = new CropData();
+        
+        
+        int neededNumOfBushels = 0;
+        int wheatInStore = 10;
+        int remainingWheat = 10;
+        int bushelsSetAside = 0;
+                
+        int expResult = 10; 
+        
+        int result = CropControl.feedPeople(neededNumOfBushels, wheatInStore, remainingWheat, bushelsSetAside, cropData);
+        assertEquals(expResult, result);
+}
+    
 }
