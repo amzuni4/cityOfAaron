@@ -81,7 +81,7 @@ public MainMenuView()
         // loop back to the top of the loop if input was not valid
         // end loop
            } while (userInput < 1 || userInput > MAX);
-         return userInput; //!!!!!I'M NOT SURE HOW i RETURN!!!!!!
+         return userInput; 
          
     
     }
