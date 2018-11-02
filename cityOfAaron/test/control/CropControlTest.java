@@ -388,5 +388,147 @@ public class CropControlTest {
         int result = CropControl.feedPeople(neededNumOfBushels, remainingWheat, bushelsSetAside, cropData);
         assertEquals(expResult, result);
 }
+ 
+  /* The setOffering method
+* Purpose: set the amount of offerings from harvest
+* @param harvest in bushels of wheat 
+* @param percentage given as offering
+* @ return number of bushels left after offering
+*  Per-conditions: harvest must be positive
+*  and  offering < 0
+*  and > total harvest 
+*/
+
+
+
+Method Signature
+public static int setOffering( int harvest, int percentageForOffering )
+
+
+
+
+Algorithm
+
+If harvest < 0, return -1;
+If offering = 0, return -1
+If offering = 100, return -1
+wheatInStore = wheatInStore + ( harvest – offering )
+Return wheatInStore
+
+/**
+     * Test of setOffering method, of class CropControl.
+     * Author Jeremi Lynch
+     * Test Case 1 returns harvest - offering
+     */
+    
+     @Test 
+    public void setOffering1() {
+        System.out.println("setOffering -  Test Case 1");
+        CropData cropData = new CropData();
+        
+        
+        int harvest = 100;
+        int offering = 10;
+       
+               
+        int expResult = 90;
+        
+        int result = CropControl.setOffering(harvest, offering, cropData);
+        assertEquals(expResult, result);
+        
+    }
+    /**
+     * Test of setOffering method, of class CropControl.
+     * Author Jeremi Lynch
+     * Test Case 2 returns harvest - offering
+     */
+    
+     @Test 
+    public void setOffering2() {
+        System.out.println("setOffering -  Test Case 1");
+        CropData cropData = new CropData();
+        
+        
+        int harvest = -100;
+        int offering = 10;
+       
+               
+        int expResult = -1;
+        
+        int result = CropControl.setOffering(harvest, offering, cropData);
+        assertEquals(expResult, result);
+        
+    }
+    /**
+     * Test of setOffering method, of class CropControl.
+     * Author Jeremi Lynch
+     * Test Case 3 returns harvest - offering
+     */
+    
+     @Test 
+    public void setOffering3() {
+        System.out.println("setOffering -  Test Case 1");
+        CropData cropData = new CropData();
+        
+        
+        int harvest = 100;
+        int offering = 100;
+       
+               
+        int expResult = -1;
+        
+        int result = CropControl.setOffering(harvest, offering, cropData);
+        assertEquals(expResult, result);
+        
+    }
+    /**
+     * Test of setOffering method, of class CropControl.
+     * Author Jeremi Lynch
+     * Test Case 4 returns harvest - offering
+     */
+    
+     @Test 
+    public void setOffering4() {
+        System.out.println("setOffering -  Test Case 1");
+        CropData cropData = new CropData();
+        
+        
+        int harvest = 100;
+        int offering = 1;
+       
+               
+        int expResult = 99;
+        
+        int result = CropControl.setOffering(harvest, offering, cropData);
+        assertEquals(expResult, result);
+        
+    }
+    /**
+     * Test of setOffering method, of class CropControl.
+     * Author Jeremi Lynch
+     * Test Case 5 returns harvest - offering
+     */
+    
+     @Test 
+    public void setOffering5() {
+        System.out.println("setOffering -  Test Case 1");
+        CropData cropData = new CropData();
+        
+        
+        int harvest = 100;
+        int offering = 99;
+       
+               
+        int expResult = 1;
+        
+        int result = CropControl.setOffering(harvest, offering, cropData);
+        assertEquals(expResult, result);
+        
+    }
+  
+    
+    
+    
+    
     
 }
