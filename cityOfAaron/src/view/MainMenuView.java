@@ -122,7 +122,7 @@ public MainMenuView()
  {
      
     // Display the Banner Page.
-     System.out.println("Welcome top the City of Aaron");
+     System.out.println("Welcome to the City of Aaron");
     // Prompt for and get the user’s name.
     String name;
    System.out.println("\nPlease type in your first name: ");

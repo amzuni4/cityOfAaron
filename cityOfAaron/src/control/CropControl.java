@@ -188,6 +188,4 @@ cropData.setWheatInStore(remainingWheat);
      return remainingWheat;
      
 }
-    
-
 }
