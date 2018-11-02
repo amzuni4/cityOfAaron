@@ -168,7 +168,7 @@ public class CropControlTest {
            
         int expResult = 28;
         
-        int result = CropControl.plantCrops(acresToPlant, acresOwned, thePopulation, currentBushels, cropData);
+        int result = CropControl.plantCrops(acresToPlant, cropData);
         System.out.println(result);
         assertEquals(expResult, result);
         //System.out.println(result);
@@ -197,7 +197,7 @@ public class CropControlTest {
                
         int expResult = -1;
         
-        int result = CropControl.plantCrops(acresToPlant, acresOwned, thePopulation, currentBushels, cropData);
+        int result = CropControl.plantCrops(acresToPlant, cropData);
         assertEquals(expResult, result);
         
     }
@@ -222,7 +222,7 @@ public class CropControlTest {
                
         int expResult = -1;
         
-        int result = CropControl.plantCrops(acresToPlant, acresOwned, thePopulation, currentBushels, cropData);
+        int result = CropControl.plantCrops(acresToPlant, cropData);
         assertEquals(expResult, result);
         
     }
@@ -246,7 +246,7 @@ public class CropControlTest {
                
         int expResult = 39;
         
-        int result = CropControl.plantCrops(acresToPlant, acresOwned, thePopulation, currentBushels, cropData);
+        int result = CropControl.plantCrops(acresToPlant, cropData);
         assertEquals(expResult, result);
         
     }
@@ -270,7 +270,7 @@ public class CropControlTest {
                
         int expResult = 7;
         
-        int result = CropControl.plantCrops(acresToPlant, acresOwned, thePopulation, currentBushels, cropData);
+        int result = CropControl.plantCrops(acresToPlant, cropData);
         assertEquals(expResult, result);
         
     }

@@ -113,18 +113,21 @@ public static int buyLand(int acresToBuy, int landPrice, int wheatInStore,
  * two times the number of acresToPlant 
  */
 
-    public static int plantCrops(int acresToPlant, int acresOwned, int thePopulation , int currentBushels, CropData cropData)
+    public static int plantCrops(int acresToPlant, CropData cropData)
 {
    // If acresToPlant < 0, return -1
         if(acresToPlant <0)
             return -1;
     //If acresToPlant > acresOwned, return -1
+    int acresOwned = cropData.getAcresOwned();
      if (acresToPlant > acresOwned)
          return -1;
     //If thePopulation < acresToPlant * 10, return -1
+    int thePopulation = cropData.getPopulation();
     if (thePopulation < acresToPlant * 10)
         return -1;
     //If currentBushels < acresToPlant * 2, return -1
+    int currentBushels = cropData.getWheatInStore();
     if (currentBushels < acresToPlant * 2)
         return -1;
 
