@@ -166,13 +166,14 @@ cropData.setWheatInStore(remainingWheat);
  * and greater than the needed number of bushels. 
  */
     
-    public static int feedPeople(int neededNumOfBushels, int wheatInStore, int remainingWheat, 
+    public static int feedPeople(int neededNumOfBushels, int remainingWheat, 
         int bushelsSetAside, CropData cropData)
 {
    // If neededNumOfBushels < 0, return -1; invalid entry 
     if(neededNumOfBushels <0)
         return -1;
     // If wheatInStore < 0, return -1; 
+    int wheatInStore = cropData.getWheatInStore();
     if(wheatInStore <0)
         return -1;
     // If wheatInStore < neededNumOfBushels, return -1;

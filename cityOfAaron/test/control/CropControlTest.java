@@ -294,7 +294,7 @@ public class CropControlTest {
                 
         int expResult = 3; 
         
-        int result = CropControl.feedPeople(neededNumOfBushels, wheatInStore, remainingWheat, bushelsSetAside, cropData);
+        int result = CropControl.feedPeople(neededNumOfBushels, remainingWheat, bushelsSetAside, cropData);
         assertEquals(expResult, result);
 }
     /**
@@ -316,7 +316,7 @@ public class CropControlTest {
                 
         int expResult = -1; 
         
-        int result = CropControl.feedPeople(neededNumOfBushels, wheatInStore, remainingWheat, bushelsSetAside, cropData);
+        int result = CropControl.feedPeople(neededNumOfBushels,remainingWheat, bushelsSetAside, cropData);
         assertEquals(expResult, result);
 }
     
@@ -339,7 +339,7 @@ public class CropControlTest {
                 
         int expResult = -1; 
         
-        int result = CropControl.feedPeople(neededNumOfBushels, wheatInStore, remainingWheat, bushelsSetAside, cropData);
+        int result = CropControl.feedPeople(neededNumOfBushels, remainingWheat, bushelsSetAside, cropData);
         assertEquals(expResult, result);
 }
     
@@ -362,7 +362,7 @@ public class CropControlTest {
                 
         int expResult = 0; 
         
-        int result = CropControl.feedPeople(neededNumOfBushels, wheatInStore, remainingWheat, bushelsSetAside, cropData);
+        int result = CropControl.feedPeople(neededNumOfBushels, remainingWheat, bushelsSetAside, cropData);
         assertEquals(expResult, result);
 }
     
@@ -385,7 +385,7 @@ public class CropControlTest {
                 
         int expResult = 10; 
         
-        int result = CropControl.feedPeople(neededNumOfBushels, wheatInStore, remainingWheat, bushelsSetAside, cropData);
+        int result = CropControl.feedPeople(neededNumOfBushels, remainingWheat, bushelsSetAside, cropData);
         assertEquals(expResult, result);
 }
     
