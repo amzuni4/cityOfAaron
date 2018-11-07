@@ -188,4 +188,22 @@ cropData.setWheatInStore(remainingWheat);
      return remainingWheat;
      
 }
+
+
+    
+
+public  int setOffering( int harvest, int percentageForOffering, CropData cropData )
+{
+  if(harvest < 0)
+   return -1;
+ if(percentageForOffering == 0)     
+ return -1;
+   if(percentageForOffering == 100)
+return -1;
+  int wheatInStore = cropData.getWheatInStore();
+ wheatInStore = wheatInStore +(harvest - percentageForOffering);
+ return wheatInStore;
 }
+}
+
+

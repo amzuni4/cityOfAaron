@@ -22,6 +22,7 @@ public class CropData implements Serializable{
     private int wheatForFood;
     private int acresPlanted;
     private int wheatForPeople;
+    private int percentageForOffering;
   
     public CropData(){} //empty constuctor for javabean
     
@@ -98,4 +99,14 @@ public class CropData implements Serializable{
         public int getWheatForPeople(){
             return wheatForPeople;
         }
+
+
+public void setOffering(int harvest, int percentageForOffering, CropData cropData)
+    {
+        this.percentageForOffering = percentageForOffering;
+   }
+   public  int getOffering(){
+      return percentageForOffering;
+}
+ 
 }

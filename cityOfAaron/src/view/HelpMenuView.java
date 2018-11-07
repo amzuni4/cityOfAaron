@@ -1,22 +1,22 @@
-// The MainMenuView class - part of the view layer
-// Object of this class manage the main menu
-// Author: Raylee Haws, Jeremi Lynch, Amy Zuniga
-// Date last modified: October 2018
-//-------------------------------------------------------------
-
-
-
+// Source code for the HelpMenuView class
+// The HelpMenuView class is a member of the view layer
+// Methods in the  HelpMenuVeiw class manage the user view
+// Author: Amy Zuniga
+// Date Last modified: 11/5
+// ==============================================================
 package view;
 import java.util.Scanner;
 import control.*;
 
-public class MainMenuView
-{
+/**
+ *
+ * @author admin
+ */
+public class HelpMenuView {
     Scanner keyboard = new Scanner(System.in);
-    private String theMenu;
+    private String helpMenu;
     private int max;
    
-    
 // The displayMenuView method
 // Purpose: displays the menu, gets the user's input, and does the 
 //               selected action
@@ -29,7 +29,7 @@ public void displayMenuView()
     do
     {
      // Display the menu
-     System.out.println(theMenu);
+     System.out.println(helpMenu);
 
     // Prompt the user and get the user’s input
      menuOption = getMenuOption();
@@ -39,24 +39,25 @@ public void displayMenuView()
 
     } while (menuOption != max);
  }
-   // The MainMenuView constructor
+
+// The HelpMenuView constructor
   // Purpose: Initialize the menu data
  // Parameters: none
 // Returns: none
 // ===================================
-public MainMenuView()
+public HelpMenuView()
 {
-        theMenu = "\n" +
+       helpMenu = "\n" +
                    "**********************************\n" +
-                   "* CITY OF AARON: MAIN GAME MENU  *\n" +
+                   "* CITY OF AARON: HELP MENU  *\n" +
                    "**********************************\n" +
-                   " 1 - Start new game\n" +
-                   " 2 - Get and start a saved game\n" +
-                   " 3 - Get help on playing the game\n" +
-                   " 4 - Save game\n" +
-                   " 5 - Quit\n";
-        
-        max = 5;
+                   " 1 - What are the goals of the game\n" +
+                   " 2 - Where is the city of Aaron?\n" +
+                   " 3 - How do I view the map?\n" +
+                   " 4 - How do I move to another location?\n" +
+                   " 5 - How do I display a list of animals, provisions, and tools in the city storehouse?\n" +
+                   " 6 - Back to Main Menu" ;
+        max = 6;
 }
 
 // The getMenuOption method
@@ -68,7 +69,7 @@ public MainMenuView()
     {
         // declare a variable to hold user's input
         int userInput = 0;
-         final int MAX = 5;
+         final int MAX = 6;
          //begin loop
          // begin loop  
          do
@@ -77,7 +78,7 @@ public MainMenuView()
              userInput = keyboard.nextInt();
          // if it is not a valid value, output an error message
            if(userInput < 1 || userInput > MAX)
-               System.out.println("Error: you must select 1, 2, 3, 4, or 5");
+               System.out.println("Error: you must select 1, 2, 3, 4, 5, or 6");
         // loop back to the top of the loop if input was not valid
         // end loop
            } while (userInput < 1 || userInput > MAX);
@@ -85,7 +86,6 @@ public MainMenuView()
          
     
     }
-    
     
     // The doAction method
     // Purpose: performs the selected action
@@ -97,79 +97,73 @@ public MainMenuView()
         switch(option)
         {
             case 1: // create and start a new game
-                startNewGame();
+                viewGoals();
                 break;
             case 2: // get and start a saved game
-                startSavedGame();
+                whereIsTheCity();
                 break;
             case 3: // get help menu
-                displayHelpMenuView();
+                viewMapHelp();
                 break;
             case 4: // save game
-                displaySaveGameView();
+                viewMoveHelp();
                 break;
             case 5:
-                System.out.println("Thanks for playing ... goodbye.");
+                viewListHelp();
+                break;
+            case 6:
+               System.out.println("Return to Main Menu.");
         }
     } 
-
- // The startNewGame method
- // Purpose: creates game object and starts the game
- // Parameters: none
- // Returns: none
- // ===================================     
- public void startNewGame()
- {
-     
-    // Display the Banner Page.
-     System.out.println("Welcome to the City of Aaron");
-    // Prompt for and get the user’s name.
-    String name;
-   System.out.println("\nPlease type in your first name: ");
-    name = keyboard.next();
-    // Call the createNewGame() method in the GameControl class
-    GameControl.createNewGame(name);
-    // Display a welcome message
-    System.out.println("Welcome" + name + " have fun");
-    // Display the Game menu
-
- }
-
-
- // The startSavedGame method
- // Purpose: Start a saved game
+    
+    // The viewGoals method
+ // Purpose: Tells the user the goal of them game
  // Parameters: none
  // Returns: none
  // ===================================     
  
 
-public void startSavedGame()
+public void viewGoals()
  {
-     System.out.println("\nStart where you left off.");
+     System.out.println("\nWhat are the goals of the game?");
  }
 
- // The displayHelpMenuVeiw method
- // Purpose: displays help menu
+ // The whereIsTheCity method
+ // Purpose: helps user find the city of Aaron
  // Parameters: none
  // Returns: none
  // ===================================     
- public void  displayHelpMenuView()
+ public void  whereIsTheCity()
  {
-  System.out.println("\nPick your game option selection");
-          HelpMenuView hmv = new HelpMenuView();
-          hmv.displayMenuView();
-////////   
-
+     System.out.println("\nWhere is the City of Aaron?.");
  }
- // The displaySaveGameView method
- // Purpose: saves the user's place in the game
+ // The viewMapHelp method
+ // Purpose: Helps the user view the map
  // Parameters: none
  // Returns: none
  // ===================================     
- public void displaySaveGameView()
+ public void viewMapHelp()
  {
-     System.out.println("\nSave Game.");
+     System.out.println("\nView the Map!");
+ }
+ 
+  // The viewMoveHelp method
+ // Purpose: Helps the user move to another location
+ // Parameters: none
+ // Returns: none
+ // ===================================     
+ public void viewMoveHelp()
+ {
+     System.out.println("\nMove to another Location.");
+ }
+ 
+  // The viewListHelp method
+ // Purpose: Displays the list of animals, provisions, and tools
+ // Parameters: none
+ // Returns: none
+ // ===================================     
+ public void viewListHelp()
+ {
+     System.out.println("\nDisplay list of Animals.");
  }
 }
-
-
