@@ -39,7 +39,7 @@ public void displayMenuView()
  
 public GameMenuView()
 {
-       gameMenu = "\n" +
+       GameMenu = "\n" +
                    "**********************************\n" +
                    "* CITY OF AARON: GAME MENU  *\n" +
                    "**********************************\n" +
@@ -98,11 +98,11 @@ public int getMenuOption()
         }
     } 
      
-   public void viewmap()
+   public void viewMap()
  {
      System.out.println("\nView the map?");
  }
-   public void viewView_PrintList()
+   public void view_PrintList()
  {
      System.out.println("\nView/Print a list");
  }
