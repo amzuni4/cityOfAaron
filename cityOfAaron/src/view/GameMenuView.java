@@ -36,8 +36,84 @@ public void displayMenuView()
 
     } while (menuOption != max);
  }  
-    
-    
+ 
+public GameMenuView()
+{
+       GameMenu = "\n" +
+                   "**********************************\n" +
+                   "* CITY OF AARON: GAME MENU  *\n" +
+                   "**********************************\n" +
+                   " 1 - View the map\n" +
+                   " 2 - View/Print a list\n" +
+                   " 3 - Move to a new location\n" +
+                   " 4 - Manage the crops\n" +
+                   " 5 - Return to the Main menu\n" ;
+                   
+        max = 5;
+}
+
+
+
+public int getMenuOption()
+    {
+        // declare a variable to hold user's input
+        int userInput = 0;
+         final int MAX = 5;
+         //begin loop
+         // begin loop  
+         do
+         {
+         // get user input from the keyboard
+             userInput = keyboard.nextInt();
+         // if it is not a valid value, output an error message
+           if(userInput < 1 || userInput > MAX)
+               System.out.println("Error: you must select 1, 2, 3, 4, or 5");
+        // loop back to the top of the loop if input was not valid
+        // end loop
+           } while (userInput < 1 || userInput > MAX);
+         return userInput; 
+
+    }      
+         
+         
+ public void doAction(int option)
+    {
+        switch(option)
+        {
+            case 1: // create and start a new game
+                viewMap();
+                break;
+            case 2: // get and start a saved game
+                view_PrintList();
+                break;
+            case 3: // get help menu
+                viewNewLocation();
+                break;
+            case 4: // save game
+                viewManageCrops();
+                break;
+            case 5:
+                System.out.println("Return to Main Menu.");
+            
+        }
+    } 
+     
+   public void viewMap()
+ {
+     System.out.println("\nView the map?");
+ }
+   public void view_PrintList()
+ {
+     System.out.println("\nView/Print a list");
+ }
+   public void viewNewLocation()
+ {
+     System.out.println("\nMove to a new location");
+ }
+   public void viewManageCrops()
+ {
+     System.out.println("\nManage the crops");
+ }
     
     
 }
