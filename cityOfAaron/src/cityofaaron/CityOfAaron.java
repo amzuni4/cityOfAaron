@@ -86,11 +86,12 @@ public class CityOfAaron implements Serializable {
     
     }
     
-        public void setGame(Game theGame){
-                this.theGame = theGame;
-        }
+            public static void setGame( Game game ) {
+         theGame = game;
+   }
+
         
-        public Game getGame()
+        public static Game getGame()
      {
          return theGame;
      }
