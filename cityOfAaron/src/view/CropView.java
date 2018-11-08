@@ -1,7 +1,7 @@
-// Source code for the HelpMenuView class
+// Source code for the CropView class
 // The HelpMenuView class is a member of the view layer
 // Methods in the  HelpMenuVeiw class manage the user view
-// Author: Amy Zuniga
+// Author: Amy Zuniga, Raylee Haws, Jeremi Llynch
 // Date Last modified: 11/5
 // ==============================================================
 package view;
