@@ -1,6 +1,6 @@
-// Source code for the HelpMenuView class
-// The HelpMenuView class is a member of the view layer
-// Methods in the  HelpMenuVeiw class manage the user view
+// Source code for the ListMenuView class
+// The ListMenuView class is a member of the view layer
+// Methods in the  ListMenuVeiw class manage the user view
 // Author: Raylee Haws
 // Date Last modified: 11/7
 // ==============================================================
@@ -118,7 +118,7 @@ public int getMenuOption()
  // Parameters: none
  // Returns: none
  // ===================================
-    public void listAnimals(); 
+    public void listAnimals() 
     {
         System.out.println("\nList or view the Animals in the storehouse");        
     }
@@ -128,7 +128,7 @@ public int getMenuOption()
  // Parameters: none
  // Returns: none
  // ===================================
-    public void listTools(); 
+    public void listTools() 
     {
         System.out.println("\nList or view the tools in the storehouse");        
     }
@@ -138,7 +138,7 @@ public int getMenuOption()
  // Parameters: none
  // Returns: none
  // ===================================
-    public void listProvisions(); 
+    public void listProvisions() 
     {
         System.out.println("\nList or view the Provisios in the storehouse");        
     }
@@ -148,7 +148,7 @@ public int getMenuOption()
  // Parameters: none
  // Returns: none
  // ===================================
-    public void listTeam(); 
+    public void listTeam() 
     {
         System.out.println("\nList or view the Developers of this game");        
     }    

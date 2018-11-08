@@ -1,6 +1,6 @@
-// Source code for the HelpMenuView class
-// The HelpMenuView class is a member of the view layer
-// Methods in the  HelpMenuVeiw class manage the user view
+// Source code for the GameMenuView class
+// The GameMenuView class is a member of the view layer
+// Methods in the  GameMenuView class manage the user view
 // Author: Jeremi Llynch
 // Date Last modified: 11/7
 
