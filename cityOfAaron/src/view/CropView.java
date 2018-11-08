@@ -30,6 +30,7 @@ public class CropView {
  // Purpose: interface with the user input for buying land
 // Parameters: none
  // Returns: none
+ //Author: Brother DeBry
  public static void buyLandView()
  {
      // Get the cost of land for this round.
@@ -59,6 +60,7 @@ public class CropView {
  // Purpose: interface with the user input for selling land
 // Parameters: none
  // Returns: none
+ // Author: Amy Zuniga
  
  public static void sellLandView()
  {
@@ -81,36 +83,13 @@ public class CropView {
      System.out.format("You now own %d acres of land. ", cropData.getAcresOwned());
 
 }
- // The feedPeopleView method
- // Purpose: interface with the user input for getting the amount of wheat to feed people
+
+
+// The plantCropsView method
+// Purpose: interface with the user input for planting crops
 // Parameters: none
- // Returns: none
- 
- public static void feedPeopleView()
- {
-     // Get the needed number of bushels from user.
-     int neededNumOfBushels = CropControl.feedPeople(0, 0, 0, cropData);
-
-     // Prompt the user to enter the number of bushels
-     System.out.format("How many bushels of grain do you want to set aside to feed the people?%n" + neededNumOfBushels);
-     System.out.println("Here is how many of Bushels of wheat you need to feed people\n"); 
-
-    //  Get the user’s input and save it.
-    neededNumOfBushels = keyboard.nextInt();
-    int remainingWheat = CropControl.plantCrops(neededNumOfBushels, cropData);
-    int bushelsSetAside = remainingWheat;
-    // Call the buyLand( ) method in the control layer to get the remaining wheat
-    CropControl.feedPeople(neededNumOfBushels, remainingWheat,  bushelsSetAside, cropData);
-    
-
-     // output how much many bushels we have to feed people
-     System.out.format("You now have %d bushels of wheat to feed people. ", cropData.getWheatForPeople());
-
-}
-  // The plantCropsView method
- // Purpose: interface with the user input for planting crops
-// Parameters: none
- // Returns: none
+// Returns: none
+ //Author: Amy Zuniga
   public static void plantCropsView()
  {
      // Get the amount of acres to plant
@@ -135,22 +114,7 @@ public class CropView {
 // Purpose: runs the methods to display crops report
 // Parameters: none
 // Returns: none
- public static void displayCropsReport()
- {
-     // Get the infomation to display crop results?
-     int report= CropControl.feedPeople(0, 0, 0, cropData);
 
-     // Prompt the user to enter the number of bushels
-     
-     System.out.format("What is the Crop Report?",report);
-     System.out.print("\nDisplay Crop Report: ");
-     
-     
-     // output how much land we now own
-     System.out.format("Here is the crops report: ", cropData.getCropYield());
-
-}
- 
 // The runCropView method()
 // Purpose: runs the methods to manage the crops game
 // Parameters: none
@@ -163,8 +127,8 @@ public static void runCropView()
 
     // add calls to the other crop view methods
     sellLandView();
-    feedPeopleView();
+    //feedPeopleView();
     plantCropsView();
-    displayCropsReport();
+    //displayCropsReport();
 }
 }
