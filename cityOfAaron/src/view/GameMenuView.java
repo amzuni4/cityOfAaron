@@ -1,8 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+// Source code for the HelpMenuView class
+// The HelpMenuView class is a member of the view layer
+// Methods in the  HelpMenuVeiw class manage the user view
+// Author: Jeremi Llynch
+// Date Last modified: 11/7
 
 package view;
 import java.util.Scanner;
