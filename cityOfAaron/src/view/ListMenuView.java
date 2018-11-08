@@ -1,6 +1,6 @@
-// Source code for the HelpMenuView class
-// The HelpMenuView class is a member of the view layer
-// Methods in the  HelpMenuVeiw class manage the user view
+// Source code for the ListMenuView class
+// The ListMenuView class is a member of the view layer
+// Methods in the  ListMenuVeiw class manage the user view
 // Author: Raylee Haws
 // Date Last modified: 11/7
 // ==============================================================
