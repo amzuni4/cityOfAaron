@@ -118,7 +118,7 @@ public int getMenuOption()
  // Parameters: none
  // Returns: none
  // ===================================
-    public void listAnimals(); 
+    public void listAnimals() 
     {
         System.out.println("\nList or view the Animals in the storehouse");        
     }
@@ -128,7 +128,7 @@ public int getMenuOption()
  // Parameters: none
  // Returns: none
  // ===================================
-    public void listTools(); 
+    public void listTools() 
     {
         System.out.println("\nList or view the tools in the storehouse");        
     }
@@ -138,7 +138,7 @@ public int getMenuOption()
  // Parameters: none
  // Returns: none
  // ===================================
-    public void listProvisions(); 
+    public void listProvisions() 
     {
         System.out.println("\nList or view the Provisios in the storehouse");        
     }
@@ -148,7 +148,7 @@ public int getMenuOption()
  // Parameters: none
  // Returns: none
  // ===================================
-    public void listTeam(); 
+    public void listTeam() 
     {
         System.out.println("\nList or view the Developers of this game");        
     }    
