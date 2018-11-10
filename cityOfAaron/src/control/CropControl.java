@@ -145,8 +145,6 @@ cropData.setWheatInStore(remainingWheat);
 
 //Return acresPlanted and remainingWheat;
  return remainingWheat + acresPlanted; 
-
-
 }
 
      /**
@@ -195,7 +193,7 @@ cropData.setWheatInStore(remainingWheat);
 
     
 
-public  int setOffering( int harvest, int percentageForOffering, CropData cropData )
+public static int setOffering( int harvest, int percentageForOffering, CropData cropData )
 {
   if(harvest < 0)
    return -1;

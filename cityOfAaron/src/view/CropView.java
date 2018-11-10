@@ -110,6 +110,36 @@ public class CropView {
      System.out.format("Here are the number of acres that can be planted: ", cropData.getWheatForPeople());
 
 }
+  // Source code for the HelpMenuView class
+// The HelpMenuView class is a member of the view layer
+// Methods in the  HelpMenuVeiw class manage the user view
+// Author: Raylee Haws
+ 
+ public static void feedPeopleView()
+         
+ {
+     // Get the needed number of bushels from the user.
+     int neededNumOfBushels = CropControl.feedPeople(0, cropData);
+     
+     //Prompt the user to write in the number of bushels they want to set aside to feed the people.
+     System.out.format("How many bushels of grain do you want to set aside to feed people?%\n" + neededNumOfBushels);
+     System.out.println("Here is how many of Bushels of wheat you need to feed people\n"); 
+     
+     // Get the user's input and save.
+     neededNumOfBushels = keyboard.nextInt();
+     int remainingWheat = CropControl.plantCrops(neededNumOfBushels, cropData);
+     int bushelsSetAside = remainingWheat;
+
+     // Call the feedPeople() method in the control layer.
+     CropControl.feedPeople(neededNumOfBushels, cropData);
+     
+     // output how much wheat is set aside to feed the people with.
+     System.out.format("You now have %d bushels of wheat to feed people. ", cropData.getWheatForPeople());
+     
+ }
+ 
+ 
+  
  // The displayCropsReport method()
 // Purpose: runs the methods to display crops report
 // Parameters: none
@@ -127,7 +157,7 @@ public static void runCropView()
 
     // add calls to the other crop view methods
     sellLandView();
-    //feedPeopleView();
+    feedPeopleView();
     plantCropsView();
     //displayCropsReport();
 }
