@@ -74,9 +74,12 @@ public int getMenuOption()
          return userInput; 
 
     }      
-         
-         
- public void doAction(int option)
+// The doAction method
+    // Purpose: performs the selected action
+    // Parameters: none
+    // Returns: none
+    // ===================================               
+public void doAction(int option)
     {
         switch(option)
         {
