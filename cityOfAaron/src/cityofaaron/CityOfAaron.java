@@ -26,9 +26,10 @@ public class CityOfAaron implements Serializable {
       
         
         MainMenuView mmv = new MainMenuView();
-        mmv.displayMenuView();
+        mmv.displayMenu(); //inherits the display menu from the MainMenu class
         
-        
+         
+                 
         
     
         Player player = new Player(); //new instance for Player
