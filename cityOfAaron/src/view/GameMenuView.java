@@ -19,7 +19,11 @@ public class GameMenuView {
     private String GameMenu;
     private int max;
     
-    
+   // The displayMenuView method
+// Purpose: displays the menu, gets the user's input, and does the 
+//               selected action
+// Parameters: none
+// Returns: none 
 public void displayMenuView()
 {
     int menuOption;
