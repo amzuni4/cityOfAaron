@@ -2,91 +2,49 @@
 // The GameMenuView class is a member of the view layer
 // Methods in the  GameMenuView class manage the user view
 // Author: Jeremi Llynch
-// Date Last modified: 11/7
-
+// Date Last modified: 11/17/2018
 package view;
+
 import java.util.Scanner;
 import control.*;
-
 
 /**
  *
  * @author jeremilynch
  */
-public class GameMenuView {
+public class GameMenuView extends MenuView {
+
+    //Scanner keyboard = new Scanner(System.in);
+    //private String GameMenu;
+    //private int max;
+    // The displayMenuView method
+    // Purpose: displays the menu, gets the user's input, and does the 
+    //  selected action
+    // Parameters: none
+    // Returns: none 
+    public GameMenuView() {
+        super("\n"
+                + "**********************************\n"
+                + "* CITY OF AARON: GAME MENU  *\n"
+                + "**********************************\n"
+                + " 1 - View the map\n"
+                + " 2 - View/Print a list\n"
+                + " 3 - Move to a new location\n"
+                + " 4 - Manage the crops\n"
+                + " 5 - Return to the Main menu\n",
+                5);
+    }
+
     
-    Scanner keyboard = new Scanner(System.in);
-    private String GameMenu;
-    private int max;
-    
-   // The displayMenuView method
-// Purpose: displays the menu, gets the user's input, and does the 
-//               selected action
-// Parameters: none
-// Returns: none 
-public void displayMenuView()
-{
-    int menuOption;
-    do
-    {
-     // Display the menu
-     System.out.println(GameMenu);
-
-    // Prompt the user and get the user’s input
-     menuOption = getMenuOption();
-
-    // Perform the desired action
-     doAction(menuOption);
-
-    } while (menuOption != max);
- }  
- 
-public GameMenuView()
-{
-       GameMenu = "\n" +
-                   "**********************************\n" +
-                   "* CITY OF AARON: GAME MENU  *\n" +
-                   "**********************************\n" +
-                   " 1 - View the map\n" +
-                   " 2 - View/Print a list\n" +
-                   " 3 - Move to a new location\n" +
-                   " 4 - Manage the crops\n" +
-                   " 5 - Return to the Main menu\n" ;
-                   
-        max = 5;
-}
-
-
-
-public int getMenuOption()
-    {
-        // declare a variable to hold user's input
-        int userInput = 0;
-         final int MAX = 5;
-         //begin loop
-         // begin loop  
-         do
-         {
-         // get user input from the keyboard
-             userInput = keyboard.nextInt();
-         // if it is not a valid value, output an error message
-           if(userInput < 1 || userInput > MAX)
-               System.out.println("Error: you must select 1, 2, 3, 4, or 5");
-        // loop back to the top of the loop if input was not valid
-        // end loop
-           } while (userInput < 1 || userInput > MAX);
-         return userInput; 
-
-    }      
 // The doAction method
     // Purpose: performs the selected action
     // Parameters: none
     // Returns: none
     // ===================================               
-public void doAction(int option)
+
+    @Override public void doAction(int option) 
     {
-        switch(option)
-        {
+        switch (option) {
             case 1: // create and start a new game
                 viewMap();
                 break;
@@ -101,26 +59,51 @@ public void doAction(int option)
                 break;
             case 5:
                 System.out.println("Return to Main Menu.");
-            
+
         }
-    } 
-     
-   public void viewMap()
- {
-     System.out.println("\nView the map?");
- }
-   public void view_PrintList()
- {
-     System.out.println("\nView/Print a list");
- }
-   public void viewNewLocation()
- {
-     System.out.println("\nMove to a new location");
- }
-   public void viewManageCrops()
- {
-     System.out.println("\nManage the crops");
- }
-    
-    
+    }
+
+    public void viewMap() {
+        System.out.println("\nView the map?");
+    }
+    // The map method
+    // Purpose: map of the city of Aaron
+    // Parameters: none
+    // Returns: none
+    // ===================================  
+
+    public void view_PrintList() {
+        System.out.println("\nView/Print a list");
+    }
+    // The print list method
+    // Purpose: prints a list of 
+    //1. List or view the animals in the storehouse
+    //2. List or view the tools in the storehouse
+    //3. List or view the provisions in the storehouse
+    //4. List or view the developers of this game
+
+    // Parameters: none
+    // Returns: none
+    // ===================================  
+    public void viewNewLocation() {
+        System.out.println("\nMove to a new location");
+    }
+    // The new location method
+    // Purpose: helps user find a new location in the city of Aaron
+    // Parameters: none
+    // Returns: none
+    // ===================================  
+
+    public void viewManageCrops() {
+        System.out.println("\nManage the crops");
+    }
+    // The manage the crops method
+    // Purpose: When the user selects this option, they will be taken 
+    //through all of the steps outlined in the “Play of the Game” at 
+    //  the beginning of this document. There is a user story associated
+    //  with each step. The user will go through each step in order.
+    // Parameters: none
+    // Returns: none
+    // ===================================    
+
 }
