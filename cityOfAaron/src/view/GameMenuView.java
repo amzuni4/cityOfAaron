@@ -1,8 +1,8 @@
 // Source code for the GameMenuView class
 // The GameMenuView class is a member of the view layer
 // Methods in the  GameMenuView class manage the user view
-// Author: Jeremi Llynch
-// Date Last modified: 11/7
+// Author: Amy Zuniga, Raylee Haws, Jeremi Lynch; Jeremi Llynch up until week 10
+// Date Last modified: 11/20
 
 package view;
 import java.util.Scanner;
@@ -13,37 +13,16 @@ import control.*;
  *
  * @author jeremilynch
  */
-public class GameMenuView {
-    
-    Scanner keyboard = new Scanner(System.in);
-    private String GameMenu;
-    private int max;
-    
-   // The displayMenuView method
-// Purpose: displays the menu, gets the user's input, and does the 
-//               selected action
-// Parameters: none
-// Returns: none 
-public void displayMenuView()
+public class GameMenuView extends MenuView
 {
-    int menuOption;
-    do
-    {
-     // Display the menu
-     System.out.println(GameMenu);
-
-    // Prompt the user and get the user’s input
-     menuOption = getMenuOption();
-
-    // Perform the desired action
-     doAction(menuOption);
-
-    } while (menuOption != max);
- }  
- 
+ // The GameMenuView constructor
+  // Purpose: Initialize the menu data
+ // Parameters: none
+// Returns: none
+// ===================================
 public GameMenuView()
 {
-       GameMenu = "\n" +
+       super ("\n" +
                    "**********************************\n" +
                    "* CITY OF AARON: GAME MENU  *\n" +
                    "**********************************\n" +
@@ -51,39 +30,18 @@ public GameMenuView()
                    " 2 - View/Print a list\n" +
                    " 3 - Move to a new location\n" +
                    " 4 - Manage the crops\n" +
-                   " 5 - Return to the Main menu\n" ;
+                   " 5 - Return to the Main menu", 5); 
                    
-        max = 5;
+      
 }
 
 
-
-public int getMenuOption()
-    {
-        // declare a variable to hold user's input
-        int userInput = 0;
-         final int MAX = 5;
-         //begin loop
-         // begin loop  
-         do
-         {
-         // get user input from the keyboard
-             userInput = keyboard.nextInt();
-         // if it is not a valid value, output an error message
-           if(userInput < 1 || userInput > MAX)
-               System.out.println("Error: you must select 1, 2, 3, 4, or 5");
-        // loop back to the top of the loop if input was not valid
-        // end loop
-           } while (userInput < 1 || userInput > MAX);
-         return userInput; 
-
-    }      
 // The doAction method
     // Purpose: performs the selected action
     // Parameters: none
     // Returns: none
     // ===================================               
-public void doAction(int option)
+@Override public void doAction(int option)
     {
         switch(option)
         {
@@ -91,7 +49,7 @@ public void doAction(int option)
                 viewMap();
                 break;
             case 2: // get and start a saved game
-                view_PrintList();
+                viewList();
                 break;
             case 3: // get help menu
                 viewNewLocation();
@@ -121,6 +79,15 @@ public void doAction(int option)
  {
      System.out.println("\nManage the crops");
  }
-    
+    // The viewList() method
+    // Purpose: Creates a ListMenuView object and calls its
+    //    displayMenu( ) method       
+    // Parameters: none
+    // Returns: none
+    public void viewList()
+    {
+        ListMenuView lmv = new ListMenuView();
+        lmv.displayMenu();
+    } 
     
 }

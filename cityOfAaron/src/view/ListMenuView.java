@@ -1,10 +1,12 @@
 // Source code for the ListMenuView class
 // The ListMenuView class is a member of the view layer
 // Methods in the  ListMenuVeiw class manage the user view
-// Author: Raylee Haws
+// Author: Amy Zuniga, Jeremi Lynch, Week 10; Raylee Haws up until week 10
 // Date Last modified: 11/16
 // ==============================================================
 package view;
+import model.Animal;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -25,13 +27,12 @@ public ListMenuView()
                    "**********************************\n" +
                    "* CITY OF AARON: LIST MENU  *\n" +
                    "**********************************\n" +
-                   " 1 - What are the goals of the game\n" +
-                   " 2 - Where is the city of Aaron?\n" +
-                   " 3 - How do I view the map?\n" +
-                   " 4 - How do I move to another location?\n" +
-                   " 5 - How do I display a list of animals, provisions, and tools in the city storehouse?\n" +
-                   " 6 - Back to Main Menu",
-        6);
+                   " 1 - List the animals in the storehouse\n" +
+                   " 2 - List the tools in the storehouse\n" +
+                   " 3 - List the provisions in the storehouse\n" +
+                   " 4 - List the developers of this game\n" +
+                   " 5 - Back to Main Menu",
+        5);
 }
 
 
@@ -61,15 +62,29 @@ public ListMenuView()
         }
     } 
     
-    // The listAnimals method
+ // The listAnimals method
  // Purpose: Shows the user a list of the animals in the storehouse
  // Parameters: none
  // Returns: none
+ //Author: Amy Zuniga
+// Date Modified: Nov 20, 2018
  // ===================================
     public void listAnimals() 
     {
-        System.out.println("\nList or view the Animals in the storehouse");        
+        System.out.println("\nView the Animals in the storehouse"); 
     }
+//         public static void createAnimalList()
+//    {
+//        ArrayList<Animal> animal = new ArrayList<>();
+//        
+//        animal.add(new Animal("Cows", 122));
+//        animal.add(new Animal("Horses", 222));
+//        animal.add(new Animal("Pigs", 30));
+//        animal.add(new Animal("Goats", 80));
+//       
+//        theGame.setAnimals(animals);
+//    }
+//    }
     
     // The listTools method
  // Purpose: Shows the user a list of the tools in the storehouse
@@ -78,7 +93,7 @@ public ListMenuView()
  // ===================================
     public void listTools() 
     {
-        System.out.println("\nList or view the tools in the storehouse");        
+        System.out.println("\nView the tools in the storehouse");        
     }
     
     // The listProvisions method
@@ -88,7 +103,7 @@ public ListMenuView()
  // ===================================
     public void listProvisions() 
     {
-        System.out.println("\nList or view the Provisios in the storehouse");        
+        System.out.println("\nView the Provisions in the storehouse");        
     }
  
     // The listTeam method
@@ -98,6 +113,6 @@ public ListMenuView()
  // ===================================
     public void listTeam() 
     {
-        System.out.println("\nList or view the Developers of this game");        
+        System.out.println("\nView the Developers of this game");        
     }    
 }

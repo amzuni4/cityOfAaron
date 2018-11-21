@@ -41,7 +41,8 @@ public class CityOfAaron implements Serializable {
        System.out.println(TeamMember.MEMBER1.getName()+ ": " 
                + TeamMember.MEMBER1.getTitle()); 
        
-       
+    //    theGame.setMap(theMap); //we havent set map ye
+
         
        
        
@@ -87,6 +88,7 @@ public class CityOfAaron implements Serializable {
     
     }
     
+    
             public static void setGame( Game game ) {
          theGame = game;
    }
@@ -96,4 +98,6 @@ public class CityOfAaron implements Serializable {
      {
          return theGame;
      }
+        
+       
 }

@@ -10,10 +10,18 @@ package model;
  * @author jeremilynch
  */
 public class Location {
+//
+//    public void setDescription(String river) {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
+//    public Location(){
+////        
+//    }
     public class location {
+    }
    private String description;
    private String symbol;
-   
+    
   public String getDescription()
   {
       return description;
@@ -33,7 +41,4 @@ public class Location {
           {
       this.symbol = symbol;
   }  
-}
-
-    
 }
