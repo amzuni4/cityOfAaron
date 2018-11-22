@@ -11,7 +11,12 @@ public class ListItem {
     private String name;
     private int number;
   
-   // initializes a general class
+ // The ListIe, constructor
+  // Purpose: Initialize the variables a
+ // Parameters: String name, int number
+// Returns: name & number
+// Author: Amy Zuniga
+// ===================================
  public ListItem (String name, int number) // its all the items in the list for animals list
  {
      
