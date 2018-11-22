@@ -5,7 +5,8 @@
 // Date Last modified: 11/16
 // ==============================================================
 package view;
-import model.Animal;
+import model.ListItem;
+import control.GameControl;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -21,7 +22,7 @@ public class ListMenuView extends MenuView {
  // Parameters: none
 // Returns: none
 // ===================================
-public ListMenuView()
+public ListMenuView ()
 {
        super("\n" +
                    "**********************************\n" +
@@ -45,13 +46,13 @@ public ListMenuView()
     {
         switch(option)
         {
-            case 1: // create and start a new game
+            case 1: // calls listAnimals function
                 listAnimals();
                 break;
-            case 2: // get and start a saved game
+            case 2: // calls a ListTools function
                 listTools();
                 break;
-            case 3: // get help menu
+            case 3: // calls list provisions
                 listProvisions();
                 break;
             case 4: // save game
@@ -70,21 +71,19 @@ public ListMenuView()
 // Date Modified: Nov 20, 2018
  // ===================================
     public void listAnimals() 
-    {
-        System.out.println("\nView the Animals in the storehouse"); 
+{
+       GameControl gameControl = new GameControl();
+ 
+       
+        ArrayList<ListItem> listItem = new ArrayList<ListItem>();
+        ArrayList<ListItem> listAnimal = gameControl.createAnimalList();
+        
+        //for loop prints out the type of animal, and the quantity of animals
+        for(int i = 0; i < listAnimal.size(); i++){
+        System.out.println(listAnimal.get(i).getName() + " " + listAnimal.get(i).getNumber());
+        }
     }
-//         public static void createAnimalList()
-//    {
-//        ArrayList<Animal> animal = new ArrayList<>();
-//        
-//        animal.add(new Animal("Cows", 122));
-//        animal.add(new Animal("Horses", 222));
-//        animal.add(new Animal("Pigs", 30));
-//        animal.add(new Animal("Goats", 80));
-//       
-//        theGame.setAnimals(animals);
-//    }
-//    }
+
     
     // The listTools method
  // Purpose: Shows the user a list of the tools in the storehouse

@@ -7,7 +7,7 @@
 package view;
 import java.util.Scanner;
 import control.*;
-
+import model.*;
 /**
  *
  * @author admin

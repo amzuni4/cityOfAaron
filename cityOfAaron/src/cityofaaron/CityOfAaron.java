@@ -7,6 +7,7 @@
 package cityofaaron;
 import model.*; //calling everything in model
 //import model.CropData;
+import model.ListItem;
 
  import java.io.Serializable;
 import view.*;
@@ -78,14 +79,15 @@ public class CityOfAaron implements Serializable {
              System.out.println("Set Acres Planted: " + cropData.getAcresPlanted() + " Acres");
              System.out.println("Set Wheat For People: " + cropData.getWheatForPeople() + "lbs");
              
-             //code by Raylee:
-            
-            ListItem tool = new ListItem(); //new instance for ListItem
-             tool.setName("Hammer");
-             tool.setNumber(5);
-             System.out.println("Tool: " + tool.getName()+ " Quantity: " + tool.getNumber());
+             //code by Raylee: ListItem Testing
+//            
+//            ListItem tool = new ListItem(); //new instance for ListItem
+//             tool.setName("Hammer");
+//             tool.setNumber(5);
+//             System.out.println("Tool: " + tool.getName()+ " Quantity: " + tool.getNumber());
+//    
     
-    
+
     }
     
     

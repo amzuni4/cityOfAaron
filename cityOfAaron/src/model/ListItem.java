@@ -10,6 +10,15 @@ public class ListItem {
     
     private String name;
     private int number;
+  
+   // initializes a general class
+ public ListItem (String name, int number) // its all the items in the list for animals list
+ {
+     
+     setName(name); // calls the pre-created function in the class
+     setNumber(number);
+ }
+
    
         
    public void setName(String name){
@@ -31,5 +40,7 @@ public class ListItem {
     {
           return number;  
     }  
+   
+   
             
 }

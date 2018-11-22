@@ -9,6 +9,7 @@ import model.*;
 import cityofaaron.CityOfAaron;
 import view.CropView.game;
 import model.Location;
+import java.util.ArrayList;
 /**
  *
  * @author admin
@@ -139,18 +140,27 @@ for(int i = 0; i < MAX_ROW; i++)
  for(int i = 0; i < MAX_ROW; i++)
  theMap.setLocation(0, 5, loc);
  
- 
-// loc = new Location();
-// loc.setDescription(desert + "\nOne bushel will plant two acres of wheat.");
-// loc.setSymbol("!!!");
-// 
-
+ }
+// The createAnimalList method
+    // Purpose: creates the array that lists the animals
+    // Parameters: string, int
+    // Returns:animal
+    // Author: Amy Zuniga
+    // Date Modified: 11/21
+    
+    
+ public static ArrayList<ListItem> createAnimalList()
+    {
+        ArrayList<ListItem> animal = new ArrayList<>();
+        
+        animal.add(new ListItem("Cows", 122));
+        animal.add(new ListItem("Horses", 222));
+        animal.add(new ListItem("Pigs", 30));
+        animal.add(new ListItem("Goats", 80));
+       return animal;
+       
+    }
     }
     
-    //when all is done, save a reference to the Game object
-   // cityOfAaron.setGame(game);
-
-       // theGame.setMap(theMap);
-       
     
-}
+    
