@@ -58,6 +58,7 @@ public class Game implements Serializable {
 
     //SETTERS AND GETTERS FOR ANIMAL LIST
     // Author: Amy Zuniga
+    // Date: 11/23 
     public void setAnimal(ArrayList<ListItem> animal)
     {
         this.animal = animal;
