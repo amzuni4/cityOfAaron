@@ -7,33 +7,37 @@ package control;
 
 import model.*;
 import cityofaaron.CityOfAaron;
-import view.CropView.game;
 import model.Location;
 import java.util.ArrayList;
+import model.Game;
 /**
  *
  * @author admin
  */
 public class GameControl 
 {
+    private static Game game = new Game();
     // size of the Locations array
    private static final int MAX_ROW = 5;
     private static final int MAX_COL = 5;
-
+    
 
     public static void createNewGame(String _name)
     {        
-        
-       CityOfAaron cityOfAaron = new CityOfAaron();
-       
-    // Create a new Game object.
-    Game game = new Game();
+      Map theMap = new Map();
+    CropData cropData = new CropData();
     // Create the player object and set the name
     Player player = new Player();
     player.setName(_name);
     
     // save reference to the player object in the game
     game.setPlayer(player);
+    
+    //Animal List Items
+    //calls in createAnimalList to main menu
+    // written by Amy Zuniga
+    // Nov 23, 2018
+    createAnimalList();
     }
     
     // method prologue ….
@@ -140,16 +144,20 @@ for(int i = 0; i < MAX_ROW; i++)
  for(int i = 0; i < MAX_ROW; i++)
  theMap.setLocation(0, 5, loc);
  
+ //you need to call the setMap() method.
+// Use the static variable game that I asked you to declare at the class level.
+
+  game.setMap(theMap);
  }
 // The createAnimalList method
     // Purpose: creates the array that lists the animals
     // Parameters: string, int
     // Returns:animal
     // Author: Amy Zuniga
-    // Date Modified: 11/21
+    // Date Modified: 11/21 & 11/23
     
     
- public static ArrayList<ListItem> createAnimalList()
+ public static void createAnimalList()
     {
         ArrayList<ListItem> animal = new ArrayList<>();
         
@@ -157,9 +165,12 @@ for(int i = 0; i < MAX_ROW; i++)
         animal.add(new ListItem("Horses", 222));
         animal.add(new ListItem("Pigs", 30));
         animal.add(new ListItem("Goats", 80));
-       return animal;
+      
+        //save the animals into a game
+        game.setAnimal(animal);
        
     }
+    
     }
     
     

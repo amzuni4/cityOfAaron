@@ -10,8 +10,10 @@ package view;
 import java.util.Scanner;
 import control.*;
 
+
 public class MainMenuView extends MenuView
 {
+    
 public MainMenuView()
 {
         super( "\n" +
@@ -72,7 +74,9 @@ public MainMenuView()
     // Display a welcome message
     System.out.println("Welcome" + name + " have fun");
     // Display the Game menu
-
+// Display the Game menu
+GameMenuView gmv = new GameMenuView();
+gmv.displayMenu();
  }
 
 
@@ -110,6 +114,8 @@ public void startSavedGame()
  {
      System.out.println("\nSave Game.");
  }
+ 
+   
 }
 
 

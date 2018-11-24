@@ -7,17 +7,37 @@
 package model;
  import java.io.Serializable;
 import cityofaaron.CityOfAaron;
+import java.util.ArrayList;
+import model.Map;
 /**
  *
  * @author admin
  */
 public class Game implements Serializable {
+    //private variables
+    private Map theMap;
     private Player thePlayer;
     private CropData theCropData;
+    //written by Amy Zuniga
+    // Nov. 23 2018
+    private ArrayList<ListItem> animal;
+    
             //type then name
     //always write the typ of the variable at the end 
-  
+    
+    
+    //default constructor
     public Game(){} //empty constuctor for javabean
+    
+    //setter and getters
+    //The Game class needs to hold a reference to the Map object that gets created.
+    public void setMap(Map theMap){
+        this.theMap = theMap;
+    }
+    
+    public Map getMap(){
+       return theMap; 
+    }
     
    public void setPlayer(Player thePlayer){
         
@@ -36,7 +56,16 @@ public class Game implements Serializable {
         return theCropData;
     }
 
-
-
+    //SETTERS AND GETTERS FOR ANIMAL LIST
+    // Author: Amy Zuniga
+    public void setAnimal(ArrayList<ListItem> animal)
+    {
+        this.animal = animal;
+    }
     
+    public ArrayList<ListItem> getAnimal(){
+        return animal;
+    }
 }
+ 
+

@@ -5,10 +5,9 @@
 // Date Last modified: 11/16
 // ==============================================================
 package view;
-import model.ListItem;
 import control.GameControl;
-import java.util.ArrayList;
-import java.util.Scanner;
+
+
 
 /**
  *
@@ -72,17 +71,10 @@ public ListMenuView ()
  // ===================================
     public void listAnimals() 
 {
-       GameControl gameControl = new GameControl();
- 
-       
-        ArrayList<ListItem> listItem = new ArrayList<ListItem>();
-        ArrayList<ListItem> listAnimal = gameControl.createAnimalList();
-        
-        //for loop prints out the type of animal, and the quantity of animals
-        for(int i = 0; i < listAnimal.size(); i++){
-        System.out.println(listAnimal.get(i).getName() + " " + listAnimal.get(i).getNumber());
+   System.out.println("\nView the List of Selected Animals");
+   GameControl.createAnimalList();
         }
-    }
+  
 
     
     // The listTools method
