@@ -245,10 +245,10 @@ for(int i = 0; i < MAX_ROW; i++)
     {
         ArrayList<ListItem> provision = new ArrayList<>();
         
-        provision.add(new ListItem("Barley", 2000));
-        provision.add(new ListItem("Oats", 12000));
-        provision.add(new ListItem("Venison", 3000));
-        provision.add(new ListItem("Potatos", 80000));
+        provision.add(new ListItem("Barley", 2100));
+        provision.add(new ListItem("Oats", 11300));
+        provision.add(new ListItem("Venison", 3500));
+        provision.add(new ListItem("Potatos", 65000));
       
         //save the animals into a game
         game.setProvision(provision);
