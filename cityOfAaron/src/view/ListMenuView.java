@@ -94,7 +94,8 @@ public ListMenuView ()
  // ===================================
     public void listProvisions() 
     {
-        System.out.println("\nView the Provisions in the storehouse");        
+        System.out.println("\nView the Provisions in the storehouse"); 
+        GameControl.showProvisionList();
     }
  
     // The listTeam method

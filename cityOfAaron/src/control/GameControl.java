@@ -45,7 +45,9 @@ public class GameControl
     // Nov 26, 2018
     createToolList();
 
+    createProvisionList();
     }
+    
     
     // The createCropData method
     // Purpose: Displays the information from the Crops in storage
@@ -232,7 +234,45 @@ for(int i = 0; i < MAX_ROW; i++)
              System.out.println(item.getName() + ": " + item.getNumber());
          }
     }
+
+// The createToolList method
+    // Purpose: creates the array that lists the animals
+    // Parameters: An Array List
+    // Returns:animal
+    // Author: Raylee Haws
+    // Date Modified: 11/26
+     public static void createProvisionList()
+    {
+        ArrayList<ListItem> provision = new ArrayList<>();
+        
+        provision.add(new ListItem("Barley", 2000));
+        provision.add(new ListItem("Oats", 12000));
+        provision.add(new ListItem("Venison", 3000));
+        provision.add(new ListItem("Potatos", 80000));
+      
+        //save the animals into a game
+        game.setProvision(provision);
+       
+    }
+
+     // The showProvisionList method
+    // Purpose: Displays the array list of animals
+    // Returns: void
+    // Author: Raylee Haws
+    // Date Modified: 11/26
+    public static void showProvisionList(){
+         System.out.println("Show List Of Provisions: ");
+         ArrayList<ListItem> provision = game.getProvision();
+         
+         for(ListItem item : provision){
+             System.out.println(item.getName() + ": " + item.getNumber());
+         }
+    }
+     
 }
+
+
+
 
     
     

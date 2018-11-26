@@ -25,6 +25,11 @@ public class Game implements Serializable {
     // Nov. 26 2018
     
     private ArrayList<ListItem> tool;
+    
+    //written by Raylee Haws
+    // Nov. 26 2018
+    
+    private ArrayList<ListItem> provision;
             //type then name
     //always write the typ of the variable at the end 
     
@@ -72,8 +77,8 @@ public class Game implements Serializable {
     }
 
     //SETTERS AND GETTERS FOR TOOL LIST
-    // Author: Amy Zuniga
-    // Date: 11/23 
+    // Author: Jeremi Lynch
+    // Date: 11/26
     public void setTool (ArrayList<ListItem> tool)
     {
         this.tool = tool;
@@ -81,6 +86,17 @@ public class Game implements Serializable {
     
     public ArrayList<ListItem> getTool(){
         return tool;
+    }
+    //SETTERS AND GETTERS FOR Provision LIST
+    // Author: Raylee Haws
+    // Date: 11/26 
+    public void setProvision (ArrayList<ListItem>provision)
+    {
+        this.provision = provision;
+    }
+    
+    public ArrayList<ListItem> getProvision(){
+        return provision;
     }
 
 }
