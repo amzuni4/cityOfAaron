@@ -235,7 +235,7 @@ for(int i = 0; i < MAX_ROW; i++)
          }
     }
 
-// The createToolList method
+// The createProvisionList method
     // Purpose: creates the array that lists the animals
     // Parameters: An Array List
     // Returns:provisions
