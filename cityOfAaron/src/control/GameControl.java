@@ -202,7 +202,7 @@ for(int i = 0; i < MAX_ROW; i++)
     // The createToolList method
     // Purpose: creates the array that lists the animals
     // Parameters: An Array List
-    // Returns:animal
+    // Returns:tool list
     // Author: Jeremi Lynch
     // Date Modified: 11/26
      public static void createToolList()
@@ -238,7 +238,7 @@ for(int i = 0; i < MAX_ROW; i++)
 // The createToolList method
     // Purpose: creates the array that lists the animals
     // Parameters: An Array List
-    // Returns:animal
+    // Returns:provisions
     // Author: Raylee Haws
     // Date Modified: 11/26
      public static void createProvisionList()
