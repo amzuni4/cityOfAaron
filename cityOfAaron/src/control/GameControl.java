@@ -170,7 +170,22 @@ for(int i = 0; i < MAX_ROW; i++)
         game.setAnimal(animal);
        
     }
-    
+ 
+// The showAnimalList method
+    // Purpose: Displays the array list of animals
+    // Returns: void
+    // Author: Amy Zuniga
+    // Date Modified: 11/26
+    public static void showAnimalList(){
+         System.out.println("Show List Of Animals: ");
+         ArrayList<ListItem> animal = game.getAnimal();
+         
+         for(ListItem item : animal){
+             System.out.println(item.getName() + ": " + item.getNumber());
+         }
+    }
+ 
+ 
     }
     
     

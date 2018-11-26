@@ -63,17 +63,17 @@ public ListMenuView ()
     } 
     
  // The listAnimals method
- // Purpose: Shows the user a list of the animals in the storehouse
+ // Purpose: Shows the user a list of the animals in the storehouse from GameControl
  // Parameters: none
  // Returns: none
  //Author: Amy Zuniga
-// Date Modified: Nov 20, 2018
+// Date Modified: Nov 26, 2018
  // ===================================
     public void listAnimals() 
 {
-   System.out.println("\nView the List of Selected Animals");
-   GameControl.createAnimalList();
-        }
+ 
+   GameControl.showAnimalList();
+ }
   
 
     
