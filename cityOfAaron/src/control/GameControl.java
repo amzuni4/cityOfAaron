@@ -38,6 +38,9 @@ public class GameControl
     // written by Amy Zuniga
     // Nov 23, 2018
     createAnimalList();
+    
+    
+     createToolList();
     }
     
     // method prologue ….
@@ -170,7 +173,19 @@ for(int i = 0; i < MAX_ROW; i++)
         game.setAnimal(animal);
        
     }
-    
+public static void createToollList()
+    {
+        ArrayList<ListItem> tool = new ArrayList<>();
+        
+        tool.add(new ListItem("hammer", 4));
+        tool.add(new ListItem("pick", 4));
+        tool.add(new ListItem("shovel", 4));
+        tool.add(new ListItem("axe", 4));
+      
+        //save the tools into a game
+        game.setTool(tool);
+       
+    }    
     }
     
     
