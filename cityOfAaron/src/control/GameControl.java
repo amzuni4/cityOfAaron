@@ -1,4 +1,4 @@
-// Source code for the ListMenuView class
+// Source code for the GameControl class
 // The ListMenuView class is a member of the view layer
 // Methods in the  GameControl class manage the user view
 // Author: Amy Zuniga, Jeremi Lynch
@@ -38,6 +38,10 @@ public class GameControl
     // written by Amy Zuniga
     // Nov 23, 2018
     createAnimalList();
+   
+    
+    
+ 
     }
     
     // method prologue ….
@@ -184,9 +188,6 @@ for(int i = 0; i < MAX_ROW; i++)
              System.out.println(item.getName() + ": " + item.getNumber());
          }
     }
- 
- 
-    }
-    
+}
     
     

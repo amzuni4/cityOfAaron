@@ -67,6 +67,8 @@ public class Game implements Serializable {
     public ArrayList<ListItem> getAnimal(){
         return animal;
     }
+
+
 }
  
 
