@@ -44,7 +44,11 @@ public class GameControl
  
     }
     
-    // method prologue ….
+    // The createCropData method
+    // Purpose: Displays the information from the Crops in storage
+    // Returns: void
+    // Author: Amy Zuniga, Raylee Haws, Jeremi Llynch
+    // Date Modified: 11/21
     public static void createCropDataObject()
     {
         
@@ -153,15 +157,15 @@ for(int i = 0; i < MAX_ROW; i++)
 
   game.setMap(theMap);
  }
+
+
 // The createAnimalList method
     // Purpose: creates the array that lists the animals
     // Parameters: string, int
     // Returns:animal
     // Author: Amy Zuniga
     // Date Modified: 11/21 & 11/23
-    
-    
- public static void createAnimalList()
+     public static void createAnimalList()
     {
         ArrayList<ListItem> animal = new ArrayList<>();
         
