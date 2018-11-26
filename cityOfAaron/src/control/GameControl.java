@@ -38,10 +38,13 @@ public class GameControl
     // written by Amy Zuniga
     // Nov 23, 2018
     createAnimalList();
-   
-    
-    
- 
+
+     //Animal List Items
+    //calls in createToolList to main menu
+    // written by Jeremi Lynch
+    // Nov 26, 2018
+    createToolList();
+
     }
     
     // The createCropData method
@@ -178,6 +181,7 @@ for(int i = 0; i < MAX_ROW; i++)
         game.setAnimal(animal);
        
     }
+
  
 // The showAnimalList method
     // Purpose: Displays the array list of animals
@@ -191,7 +195,44 @@ for(int i = 0; i < MAX_ROW; i++)
          for(ListItem item : animal){
              System.out.println(item.getName() + ": " + item.getNumber());
          }
+    } 
+
+    // The createToolList method
+    // Purpose: creates the array that lists the animals
+    // Parameters: string, int
+    // Returns:animal
+    // Author: Jeremi Lynch
+    // Date Modified: 11/26
+     public static void createToolList()
+    {
+        ArrayList<ListItem> tool = new ArrayList<>();
+        
+        tool.add(new ListItem("Hammer", 2));
+        tool.add(new ListItem("Ax", 12));
+        tool.add(new ListItem("Scythe", 30));
+        tool.add(new ListItem("Plow", 80));
+      
+        //save the animals into a game
+        game.setTool(tool);
+       
+    }
+
+    
+    
+// The showToolList method
+    // Purpose: Displays the array list of animals
+    // Returns: void
+    // Author: Jeremi Lynch
+    // Date Modified: 11/26
+    public static void showToolList(){
+         System.out.println("Show List Of Tools: ");
+         ArrayList<ListItem> tool = game.getTool();
+         
+         for(ListItem item : tool){
+             System.out.println(item.getName() + ": " + item.getNumber());
+         }
     }
 }
+
     
     

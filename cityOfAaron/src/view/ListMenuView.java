@@ -84,7 +84,7 @@ public ListMenuView ()
  // ===================================
     public void listTools() 
     {
-        System.out.println("\nView the tools in the storehouse");        
+        GameControl.showToolList();        
     }
     
     // The listProvisions method

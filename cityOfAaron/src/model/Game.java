@@ -21,7 +21,10 @@ public class Game implements Serializable {
     //written by Amy Zuniga
     // Nov. 23 2018
     private ArrayList<ListItem> animal;
+    //written by Jeremi Lynch
+    // Nov. 26 2018
     
+    private ArrayList<ListItem> tool;
             //type then name
     //always write the typ of the variable at the end 
     
@@ -68,6 +71,17 @@ public class Game implements Serializable {
         return animal;
     }
 
+    //SETTERS AND GETTERS FOR TOOL LIST
+    // Author: Amy Zuniga
+    // Date: 11/23 
+    public void setTool (ArrayList<ListItem> tool)
+    {
+        this.tool = tool;
+    }
+    
+    public ArrayList<ListItem> getTool(){
+        return tool;
+    }
 
 }
  
