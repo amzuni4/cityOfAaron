@@ -72,11 +72,12 @@ public MainMenuView()
     // Call the createNewGame() method in the GameControl class
     GameControl.createNewGame(name);
     // Display a welcome message
-    System.out.println("Welcome" + name + " have fun");
+    System.out.println("Welcome " + name + " have fun");
     // Display the Game menu
 // Display the Game menu
 GameMenuView gmv = new GameMenuView();
 gmv.displayMenu();
+
  }
 
 

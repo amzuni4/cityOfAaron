@@ -5,8 +5,14 @@
 // Date Last modified: 11/16
 // ==============================================================
 package view;
+import cityofaaron.CityOfAaron;
 import control.GameControl;
-
+import model.Game;
+import model.ListItem;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Iterator;
+     
 
 
 /**
@@ -15,7 +21,7 @@ import control.GameControl;
  */
 public class ListMenuView extends MenuView {
     
-
+private Game game = CityOfAaron.getGame();
 // The ListMenuView constructor
   // Purpose: Initialize the menu data
  // Parameters: none
@@ -71,10 +77,21 @@ public ListMenuView ()
  // ===================================
     public void listAnimals() 
 {
- 
-   GameControl.showAnimalList();
- }
+    
+    // get the reference to the game object that has beens stored in the CityOfAaron class.
+// Save the reference in the variable “game"
+Game game = CityOfAaron.getGame();   
+
+// Now use this game object to get a reference to the animal list
+ArrayList<ListItem> animal = game.getAnimal();
+;     
+        
+ for (int i = 0; i < game.getAnimal().size(); i++){
   
+ //}
+       System.out.println(game.getAnimal().get(i).getName() + " " + game.getAnimal().get(i).getNumber());}
+ }
+
 
     
     // The listTools method
@@ -84,7 +101,11 @@ public ListMenuView ()
  // ===================================
     public void listTools() 
     {
-        GameControl.showToolList();        
+        Game game = CityOfAaron.getGame();   
+        ArrayList<ListItem> tool = game.getTool();
+               for (int i = 0; i < game.getTool().size(); i++){
+  
+       System.out.println(game.getTool().get(i).getName() + " " + game.getTool().get(i).getNumber());}
     }
     
     // The listProvisions method
@@ -94,8 +115,12 @@ public ListMenuView ()
  // ===================================
     public void listProvisions() 
     {
-        System.out.println("\nView the Provisions in the storehouse"); 
-        GameControl.showProvisionList();
+         Game game = CityOfAaron.getGame();   
+        ArrayList<ListItem> provision = game.getProvision();
+            for (int i = 0; i < game.getProvision().size(); i++){
+  
+       System.out.println(game.getProvision().get(i).getName() + " " + game.getProvision().get(i).getNumber());} 
+        
     }
  
     // The listTeam method

@@ -15,9 +15,10 @@ import model.Map;
  */
 public class Game implements Serializable {
     //private variables
-    private Map theMap;
+  
     private Player thePlayer;
     private CropData theCropData;
+      private Map theMap;
     //written by Amy Zuniga
     // Nov. 23 2018
     private ArrayList<ListItem> animal;
@@ -36,17 +37,10 @@ public class Game implements Serializable {
     
     //default constructor
     public Game(){} //empty constuctor for javabean
-    
+
+            
     //setter and getters
-    //The Game class needs to hold a reference to the Map object that gets created.
-    public void setMap(Map theMap){
-        this.theMap = theMap;
-    }
-    
-    public Map getMap(){
-       return theMap; 
-    }
-    
+   
    public void setPlayer(Player thePlayer){
         
         this.thePlayer = thePlayer; //this indicates we pulling name from private variable
@@ -63,13 +57,23 @@ public class Game implements Serializable {
     {
         return theCropData;
     }
+    
+     //The Game class needs to hold a reference to the Map object that gets created.
+    public void setMap(Map theMap){
+        this.theMap = theMap;
+    }
+    
+    public Map getMap(){
+       return theMap; 
+    }
+    
 
     //SETTERS AND GETTERS FOR ANIMAL LIST
     // Author: Amy Zuniga
     // Date: 11/23 
-    public void setAnimal(ArrayList<ListItem> animal)
+    public void setAnimal(ArrayList<ListItem> _animal)
     {
-        this.animal = animal;
+        this.animal = _animal;
     }
     
     public ArrayList<ListItem> getAnimal(){

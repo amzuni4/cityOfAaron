@@ -16,36 +16,50 @@ import model.Game;
  */
 public class GameControl 
 {
-    private static Game game = new Game();
+   
     // size of the Locations array
    private static final int MAX_ROW = 5;
-    private static final int MAX_COL = 5;
-    
-
+   private static final int MAX_COL = 5;
+   private static Game game = new Game();
+   private static CityOfAaron cityOfAaron = new CityOfAaron();
     public static void createNewGame(String _name)
     {        
-      Map theMap = new Map();
+      
     CropData cropData = new CropData();
     // Create the player object and set the name
     Player player = new Player();
     player.setName(_name);
     
+    Map theMap = new Map();
     // save reference to the player object in the game
     game.setPlayer(player);
-    
+    cityOfAaron.setGame(game);
     //Animal List Items
     //calls in createAnimalList to main menu
     // written by Amy Zuniga
     // Nov 23, 2018
+   
     createAnimalList();
-
+    
+    createToolList();
+        
+        //(animal.get(3).getName());
+    
+   
+   
+    
+    
      //Animal List Items
     //calls in createToolList to main menu
     // written by Jeremi Lynch
     // Nov 26, 2018
-    createToolList();
+ //   createToolList();
 
-    createProvisionList();
+  createProvisionList();
+ 
+ 
+    // Save a reference to the Game object in the static variable
+    CityOfAaron.getGame();
     }
     
     
@@ -181,25 +195,13 @@ for(int i = 0; i < MAX_ROW; i++)
       
         //save the animals into a game
         game.setAnimal(animal);
-       
+      
+        
+        //animal.get(3);
     }
-
- 
-// The showAnimalList method
-    // Purpose: Displays the array list of animals
-    // Returns: void
-    // Author: Amy Zuniga
-    // Date Modified: 11/26
-    public static void showAnimalList(){
-         System.out.println("Show List Of Animals: ");
-         ArrayList<ListItem> animal = game.getAnimal();
-         
-         for(ListItem item : animal){
-             System.out.println(item.getName() + ": " + item.getNumber());
-         }
-    } 
-
-    // The createToolList method
+     
+     
+      // The createToolList method
     // Purpose: creates the array that lists the animals
     // Parameters: An Array List
     // Returns:tool list
@@ -218,23 +220,6 @@ for(int i = 0; i < MAX_ROW; i++)
         game.setTool(tool);
        
     }
-
-    
-    
-// The showToolList method
-    // Purpose: Displays the array list of animals
-    // Returns: void
-    // Author: Jeremi Lynch
-    // Date Modified: 11/26
-    public static void showToolList(){
-         System.out.println("Show List Of Tools: ");
-         ArrayList<ListItem> tool = game.getTool();
-         
-         for(ListItem item : tool){
-             System.out.println(item.getName() + ": " + item.getNumber());
-         }
-    }
-
 // The createProvisionList method
     // Purpose: creates the array that lists the animals
     // Parameters: An Array List
@@ -254,25 +239,7 @@ for(int i = 0; i < MAX_ROW; i++)
         game.setProvision(provision);
        
     }
-
-     // The showProvisionList method
-    // Purpose: Displays the array list of animals
-    // Returns: void
-    // Author: Raylee Haws
-    // Date Modified: 11/26
-    public static void showProvisionList(){
-         System.out.println("Show List Of Provisions: ");
-         ArrayList<ListItem> provision = game.getProvision();
-         
-         for(ListItem item : provision){
-             System.out.println(item.getName() + ": " + item.getNumber());
-         }
-    }
-     
 }
-
-
-
 
     
     
