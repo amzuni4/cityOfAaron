@@ -34,7 +34,7 @@ public class Game implements Serializable {
             //type then name
     //always write the typ of the variable at the end 
     
-    
+     private ArrayList<ListItem> developer;
     //default constructor
     public Game(){} //empty constuctor for javabean
 
@@ -103,6 +103,20 @@ public class Game implements Serializable {
         return provision;
     }
 
+    
+        //SETTERS AND GETTERS FOR Provision LIST
+    // Author: Raylee Haws
+    // Date: 11/26 
+    public void setDeveloper (ArrayList<ListItem>provision)
+    {
+        this.developer = developer;
+    }
+    
+    public ArrayList<ListItem> getDeveloper(){
+        return developer;
+    }
+
+    
 }
  
 

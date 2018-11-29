@@ -77,14 +77,14 @@ public ListMenuView ()
  // ===================================
     public void listAnimals() 
 {
-    
+    System.out.println("View List of Animals in Storehouse");
     // get the reference to the game object that has beens stored in the CityOfAaron class.
 // Save the reference in the variable “game"
 Game game = CityOfAaron.getGame();   
 
 // Now use this game object to get a reference to the animal list
 ArrayList<ListItem> animal = game.getAnimal();
-;     
+
         
  for (int i = 0; i < game.getAnimal().size(); i++){
   
@@ -101,12 +101,15 @@ ArrayList<ListItem> animal = game.getAnimal();
  // ===================================
     public void listTools() 
     {
+        System.out.println("View List of Tools in Storehouse");
         Game game = CityOfAaron.getGame();   
         ArrayList<ListItem> tool = game.getTool();
-               for (int i = 0; i < game.getTool().size(); i++){
+               for (int i = 0; i < tool.size(); i++){
   
-       System.out.println(game.getTool().get(i).getName() + " " + game.getTool().get(i).getNumber());}
+       System.out.println(tool.get(i).getName() + " " + tool.get(i).getNumber());}
     }
+
+    
     
     // The listProvisions method
  // Purpose: Shows the user a list of the provisions in the storehouse
@@ -115,11 +118,12 @@ ArrayList<ListItem> animal = game.getAnimal();
  // ===================================
     public void listProvisions() 
     {
-         Game game = CityOfAaron.getGame();   
-        ArrayList<ListItem> provision = game.getProvision();
-            for (int i = 0; i < game.getProvision().size(); i++){
-  
-       System.out.println(game.getProvision().get(i).getName() + " " + game.getProvision().get(i).getNumber());} 
+        System.out.println("View List of Provisions in Storehouse");
+         Game game = CityOfAaron.getGame();
+         ArrayList<ListItem> provision = game.getProvision();
+         for (int i = 0; i < provision.size(); i++){
+           System.out.println(provision.get(i).getName() + " " + provision.get(i).getNumber() );
+    }
         
     }
  
@@ -130,6 +134,11 @@ ArrayList<ListItem> animal = game.getAnimal();
  // ===================================
     public void listTeam() 
     {
-        System.out.println("\nView the Developers of this game");        
+        System.out.println("View List of Developers of the Game");
+         Game game = CityOfAaron.getGame();
+         ArrayList<ListItem> developer = game.getDeveloper();
+         for (int i = 0; i < developer.size(); i++){
+             System.out.println(developer.get(i).getName() + " " + developer.get(i).getNumber());
+         }
     }    
 }

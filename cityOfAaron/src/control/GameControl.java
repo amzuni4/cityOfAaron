@@ -42,7 +42,7 @@ public class GameControl
     createAnimalList();
     
     createToolList();
-        
+    createDeveloperList();
         //(animal.get(3).getName());
     
    
@@ -237,6 +237,26 @@ for(int i = 0; i < MAX_ROW; i++)
       
         //save the animals into a game
         game.setProvision(provision);
+       
+    }
+     
+     // The createProvisionList method
+    // Purpose: creates the array that lists the animals
+    // Parameters: An Array List
+    // Returns:provisions
+    // Author: Raylee Haws
+    // Date Modified: 11/26
+     public static void createDeveloperList()
+    {
+        ArrayList<ListItem> developer = new ArrayList<>();
+        
+        developer.add(new ListItem("Amy Zuniga", 1));
+        developer.add(new ListItem("Jeremi Lynch", 2));
+        developer.add(new ListItem("Raylee Haws", 3));
+        
+      
+        //save the animals into a game
+        game.setDeveloper(developer);
        
     }
 }
