@@ -74,17 +74,18 @@ public class CropControl {
 // Pre-conditions: acres to buy must be positive
 // and <= the amount of wheat in store.
 // Updated 11.29 by Amy Zuniga, Raylee Haws, Jeremi Lynch
-public static void buyLand(int acresToBuy, int landPrice, int wheatInStore, int acresOwned, CropData cropData) throws CropException
+public static void buyLand(int acresToBuy, int landPrice, CropData cropData) throws CropException
 {
    // If acresToBuy < 0, return -1;
     if(acresToBuy <0)
         throw new CropException("A negative value was input");
     
  int wheat = cropData.getWheatInStore();
-    if(wheatInStore < (landPrice * acresToBuy))
+        int wheatInStore = 0;
+    if(wheat< (landPrice * acresToBuy))
         throw new CropException("There's insufficient wheat to buy this much land");
     // add the number of acresto buy to current number of acres
-    acresOwned = cropData.getAcresOwned();
+    int acresOwned = cropData.getAcresOwned();
     acresOwned += acresToBuy;
     cropData.setAcresOwned(acresOwned);
     

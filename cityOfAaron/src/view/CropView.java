@@ -50,7 +50,7 @@ public class CropView {
         acresToBuy = keyboard.nextInt();
         try
         {
-           CropControl.buyLand(acresToBuy, landPrice, acresToBuy, acresToBuy, cropData);
+           CropControl.buyLand(acresToBuy, landPrice,  cropData);
         }
         catch(CropException e)
         {
@@ -132,56 +132,56 @@ public static void plantCropsView(CropData cropData) {
                 System.out.println(e.getMessage());
                 paramsOkay = true;
             }
-        } while (paramsOkay);
+        } while (paramsOkay); 
+}
 
 
-//
-//  // Source code for the HelpMenuView class
-//// The HelpMenuView class is a member of the view layer
-//// Methods in the  HelpMenuVeiw class manage the user view
-//// Author: Raylee Haws
-// 
-// public static void feedPeopleView() throws CropException
-//         
-// {
-//     // Get the needed number of bushels from the user.
-//     int neededNumOfBushels = CropControl.feedPeople(0, cropData);
-//     
-//     //Prompt the user to write in the number of bushels they want to set aside to feed the people.
-//     System.out.format("How many bushels of grain do you want to set aside to feed people?%\n" + neededNumOfBushels);
-//     System.out.println("Here is how many of Bushels of wheat you need to feed people\n"); 
-//     
-//     // Get the user's input and save.
-//     neededNumOfBushels = keyboard.nextInt();
-//     int remainingWheat;
-//     remainingWheat = CropControl.plantCrops(neededNumOfBushels, cropData);
-//     int bushelsSetAside;
-//     bushelsSetAside = remainingWheat;
-//
-//     // Call the feedPeople() method in the control layer.
-//     CropControl.feedPeople(neededNumOfBushels, cropData);
-//     
-//     // output how much wheat is set aside to feed the people with.
-//     System.out.format("You now have %d bushels of wheat to feed people. ", cropData.getWheatForPeople());
-//     
-// }
-// 
-// 
-//  
-// // The displayCropsReport method()
-//// Purpose: runs the methods to display crops report
-//// Parameters: none
-//// Returns: none
-//
-//// The runCropView method()
-//// Purpose: runs the methods to manage the crops game
-//// Parameters: none
-//// Returns: none
-//public static void runCropView()
-//{
-//    // call the buyLandView( ) method
-//    buyLandView( );
-//        
+  // Source code for the HelpMenuView class
+// The HelpMenuView class is a member of the view layer
+// Methods in the  HelpMenuVeiw class manage the user view
+// Author: Raylee Haws
+ 
+ public static void feedPeopleView() 
+         
+ {
+     // Get the needed number of bushels from the user.
+     int neededNumOfBushels = CropControl.feedPeople(0, cropData);
+     
+     //Prompt the user to write in the number of bushels they want to set aside to feed the people.
+     System.out.format("How many bushels of grain do you want to set aside to feed people?%\n" + neededNumOfBushels);
+     System.out.println("Here is how many of Bushels of wheat you need to feed people\n"); 
+     
+     // Get the user's input and save.
+     neededNumOfBushels = keyboard.nextInt();
+     int remainingWheat;
+     remainingWheat = CropControl.plantCrops(neededNumOfBushels, cropData);
+     int bushelsSetAside;
+     bushelsSetAside = remainingWheat;
+
+     // Call the feedPeople() method in the control layer.
+     CropControl.feedPeople(neededNumOfBushels, cropData);
+     
+     // output how much wheat is set aside to feed the people with.
+     System.out.format("You now have %d bushels of wheat to feed people. ", cropData.getWheatForPeople());
+     
+ }
+ 
+ 
+  
+ // The displayCropsReport method()
+// Purpose: runs the methods to display crops report
+// Parameters: none
+// Returns: none
+
+// The runCropView method()
+// Purpose: runs the methods to manage the crops game
+// Parameters: none
+// Returns: none
+public static void runCropView()
+{
+    // call the buyLandView( ) method
+    buyLandView( );
+        
 
 
 
@@ -192,13 +192,5 @@ public static void plantCropsView(CropData cropData) {
     //displayCropsReport();
 }
 
-   public static class game {
 
-       public static void setCropData(CropData cropData) {
-           throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-       }
-
-       public game() {
-       }
-    }
 }

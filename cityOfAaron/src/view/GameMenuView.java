@@ -109,6 +109,8 @@ public GameMenuView()
     // ===================================    
 public void viewManageCrops() {
         System.out.println("\nManage the crops");
+       
+       CropView.runCropView();
     }
     // The viewList() method
     // Purpose: Creates a ListMenuView object and calls its
