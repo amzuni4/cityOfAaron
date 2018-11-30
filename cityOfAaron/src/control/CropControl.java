@@ -42,17 +42,18 @@ public class CropControl {
 // Pre-conditions: acres to sell must be positive
 // and <= acresOwned
 // Author: Brother DeBry
+//Updated 11/29 Amy Zuniga
 
-    public static int sellLand(int landPrice, int acresToSell, CropData cropData)
+    public static void sellLand(int landPrice, int acresToSell, CropData cropData) throws CropException
     {
     //if acresToSell < 0, return -1
         if(acresToSell < 0)
-            return -1;
+            throw new CropException("A negative value was input");
 
     //if acresToSell > acresOwned, return -1
         int owned = cropData.getAcresOwned();
         if(acresToSell > owned)
-            return -1;
+           throw new CropException("There's insufficient wheat to sell this much land");
 
     //acresOwned = acresOwned - acresToSell
     owned -= acresToSell;
@@ -63,8 +64,6 @@ public class CropControl {
     int wheat = cropData.getWheatInStore();
     wheat += (acresToSell * landPrice);
     cropData.setWheatInStore(wheat);
-    //return acresOwned
-    return owned;
 
     }
     
@@ -75,6 +74,7 @@ public class CropControl {
 // Returns: the number of acres owned after the land purchase
 // Pre-conditions: acres to buy must be positive
 // and <= the amount of wheat in store.
+// Updated 11.29 by Amy Zuniga, Raylee Haws, Jeremi Lynch
 public static void buyLand(int acresToBuy, int landPrice, int wheatInStore, int acresOwned, CropData cropData) throws CropException
 {
    // If acresToBuy < 0, return -1;
@@ -118,23 +118,23 @@ public static void buyLand(int acresToBuy, int landPrice, int wheatInStore, int 
  * two times the number of acresToPlant 
  */
 
-    public static int plantCrops(int acresToPlant, CropData cropData)
+    public static void plantCrops(int acresToPlant, CropData cropData) throws CropException
 {
    // If acresToPlant < 0, return -1
         if(acresToPlant <0)
-            return -1;
+            throw new CropException("A negative value was input");
     //If acresToPlant > acresOwned, return -1
     int acresOwned = cropData.getAcresOwned();
      if (acresToPlant > acresOwned)
-         return -1;
+         throw new CropException("There's insufficient land owned to plant this crop");
     //If thePopulation < acresToPlant * 10, return -1
     int thePopulation = cropData.getPopulation();
     if (thePopulation < acresToPlant * 10)
-        return -1;
+        throw new CropException("There's insufficient amount of people to plant the crop");
     //If currentBushels < acresToPlant * 2, return -1
     int currentBushels = cropData.getWheatInStore();
     if (currentBushels < acresToPlant * 2)
-        return -1;
+       throw new CropException("There's insufficient wheat to in store to plant crops");
 
  // numOfBushels = acresToPlant / 2 
  int numOfBushels = acresToPlant / 2;
@@ -147,9 +147,7 @@ int acresPlanted = acresToPlant;
 //Save acresPlanted and remainingWheat;
 cropData.setAcresPlanted(acresPlanted);
 cropData.setWheatInStore(remainingWheat);
-
-//Return acresPlanted and remainingWheat;
- return remainingWheat + acresPlanted; 
+ 
 }
 
      /**
