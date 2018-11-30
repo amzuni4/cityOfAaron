@@ -5,8 +5,10 @@
 //-------------------------------------------------------------
 
 package control;
+import exceptions.CropException;
 import java.util.Random;
 import model.CropData;
+
 /**
  *
  * @author admin
@@ -73,25 +75,28 @@ public class CropControl {
 // Returns: the number of acres owned after the land purchase
 // Pre-conditions: acres to buy must be positive
 // and <= the amount of wheat in store.
-
-public static int buyLand(int acresToBuy, int landPrice, int wheatInStore, 
-        int acresOwned, CropData cropData)
+public static void buyLand(int acresToBuy, int landPrice, int wheatInStore, int acresOwned, CropData cropData) throws CropException
 {
    // If acresToBuy < 0, return -1;
     if(acresToBuy <0)
-        return -1;
- //If wheatInStore < (landPrice * acresToBuy), return -1;
+        throw new CropException("A negative value was input");
+    
+ int wheat = cropData.getWheatInStore();
     if(wheatInStore < (landPrice * acresToBuy))
-        return -1;
-//acresOwned = (acresOwned + acresToBuy)
-     acresOwned = (acresOwned + acresToBuy);
-    //wheatInStore = wheatInStore – (acresToBuy *  landPrice)
-     wheatInStore = wheatInStore - (acresToBuy * landPrice);
-     cropData.setWheatInStore(wheatInStore);
-     cropData.setAcresOwned(acresOwned);
-    //Return acresOwned;
-     return acresOwned;
+        throw new CropException("There's insufficient wheat to buy this much land");
+    // add the number of acresto buy to current number of acres
+    acresOwned = cropData.getAcresOwned();
+    acresOwned += acresToBuy;
+    cropData.setAcresOwned(acresOwned);
+    
+    //deduct cost from wheat In store
+    wheat = cropData.getWheatInStore();
+    wheat -= (acresToBuy * landPrice);
+    cropData.setWheatInStore(wheat);
+
 }
+  
+
   
  /**
  * Author: Amy Zuniga
