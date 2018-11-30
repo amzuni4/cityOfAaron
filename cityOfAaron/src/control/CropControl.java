@@ -52,7 +52,7 @@ public class CropControl {
     //if acresToSell > acresOwned, return -1
         int owned = cropData.getAcresOwned();
         if(acresToSell > owned)
-           throw new CropException("There's insufficient wheat to sell this much land");
+           throw new CropException("There's insufficient number of acres to sell this much land");
 
     //acresOwned = acresOwned - acresToSell
     owned -= acresToSell;

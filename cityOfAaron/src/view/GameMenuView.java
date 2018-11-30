@@ -5,8 +5,11 @@
 // Date Last modified: 11/20
 
 package view;
+import cityofaaron.CityOfAaron;
 import java.util.Scanner;
 import control.*;
+import model.Game;
+
 
 /**
  *
@@ -69,6 +72,7 @@ public GameMenuView()
      */
     public void viewMap() {
         System.out.println("\nView the map?");
+        
     }
     // The map method
     // Purpose: map of the city of Aaron
@@ -108,8 +112,7 @@ public GameMenuView()
     // Returns: none
     // ===================================    
 public void viewManageCrops() {
-        System.out.println("\nManage the crops");
-       
+        System.out.println("\nManage the crops"); 
        CropView.runCropView();
     }
     // The viewList() method

@@ -21,11 +21,11 @@ public class GameControl
    private static final int MAX_ROW = 5;
    private static final int MAX_COL = 5;
    private static Game game = new Game();
-   private static CityOfAaron cityOfAaron = new CityOfAaron();
+   
     public static void createNewGame(String _name)
     {        
       
-    CropData cropData = new CropData();
+    createCropDataObject();
     // Create the player object and set the name
     Player player = new Player();
     player.setName(_name);
@@ -33,7 +33,7 @@ public class GameControl
     Map theMap = new Map();
     // save reference to the player object in the game
     game.setPlayer(player);
-    cityOfAaron.setGame(game);
+   CityOfAaron.setGame(game);
     //Animal List Items
     //calls in createAnimalList to main menu
     // written by Amy Zuniga
@@ -44,7 +44,7 @@ public class GameControl
     createToolList();
     createDeveloperList();
         //(animal.get(3).getName());
-    
+    createProvisionList();
    
    
     
@@ -55,11 +55,11 @@ public class GameControl
     // Nov 26, 2018
  //   createToolList();
 
-  createProvisionList();
+  
  
  
     // Save a reference to the Game object in the static variable
-    CityOfAaron.getGame();
+    CityOfAaron.setGame(game);
     }
     
     
@@ -256,7 +256,7 @@ for(int i = 0; i < MAX_ROW; i++)
         
       
         //save the animals into a game
-        game.setDeveloper(developer);
+      game.getDeveloper();
        
     }
 }

@@ -135,6 +135,7 @@ ArrayList<ListItem> animal = game.getAnimal();
     public void listTeam() 
     {
         System.out.println("View List of Developers of the Game");
+        
          Game game = CityOfAaron.getGame();
          ArrayList<ListItem> developer = game.getDeveloper();
          for (int i = 0; i < developer.size(); i++){
