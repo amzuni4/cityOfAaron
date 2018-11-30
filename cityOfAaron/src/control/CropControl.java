@@ -41,7 +41,6 @@ public class CropControl {
 // Returns: the number of acres owned after the sale
 // Pre-conditions: acres to sell must be positive
 // and <= acresOwned
-// Author: Brother DeBry
 //Updated 11/29 Amy Zuniga
 
     public static void sellLand(int landPrice, int acresToSell, CropData cropData) throws CropException
@@ -96,10 +95,8 @@ public static void buyLand(int acresToBuy, int landPrice, int wheatInStore, int 
 
 }
   
-
-  
- /**
- * Author: Amy Zuniga
+    /**
+ * Author: Amy Zuniga 10/20/2018 and Jeremi Lynch 11/29
  * The "Plant the Crops" Method 
  * Purpose: 
  * Plant the Crops
@@ -118,23 +115,23 @@ public static void buyLand(int acresToBuy, int landPrice, int wheatInStore, int 
  * two times the number of acresToPlant 
  */
 
-    public static void plantCrops(int acresToPlant, CropData cropData) throws CropException
+    public static int plantCrops(int acresToPlant, CropData cropData)
 {
    // If acresToPlant < 0, return -1
         if(acresToPlant <0)
-            throw new CropException("A negative value was input");
+            return -1;
     //If acresToPlant > acresOwned, return -1
     int acresOwned = cropData.getAcresOwned();
      if (acresToPlant > acresOwned)
-         throw new CropException("There's insufficient land owned to plant this crop");
+         return -1;
     //If thePopulation < acresToPlant * 10, return -1
     int thePopulation = cropData.getPopulation();
     if (thePopulation < acresToPlant * 10)
-        throw new CropException("There's insufficient amount of people to plant the crop");
+        return -1;
     //If currentBushels < acresToPlant * 2, return -1
     int currentBushels = cropData.getWheatInStore();
     if (currentBushels < acresToPlant * 2)
-       throw new CropException("There's insufficient wheat to in store to plant crops");
+        return -1;
 
  // numOfBushels = acresToPlant / 2 
  int numOfBushels = acresToPlant / 2;
@@ -147,9 +144,10 @@ int acresPlanted = acresToPlant;
 //Save acresPlanted and remainingWheat;
 cropData.setAcresPlanted(acresPlanted);
 cropData.setWheatInStore(remainingWheat);
- 
-}
 
+//Return acresPlanted and remainingWheat;
+ return remainingWheat + acresPlanted; 
+}
      /**
  * Author: Raylee Haws
  * The feedPeople Method 

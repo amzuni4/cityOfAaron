@@ -96,13 +96,11 @@ public class CropView {
     } while (paramsNotOkay);
     
 }
-
-
 // The plantCropsView method
 // Purpose: interface with the user input for planting crops
 // Parameters: none
 // Returns: none
- //Author: Amy Zuniga
+ //Author: Amy Zuniga 10/20/ 2018 and Jeremi Lynch 11/29/2018
 public static void plantCropsView(CropData cropData) {
         //get acres owned by the player and wheat in store
         int acres = cropData.getAcresOwned(); 
@@ -135,7 +133,7 @@ public static void plantCropsView(CropData cropData) {
                 paramsOkay = true;
             }
         } while (paramsOkay);
-    
+
 
 //
 //  // Source code for the HelpMenuView class
