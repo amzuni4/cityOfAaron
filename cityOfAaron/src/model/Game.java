@@ -107,7 +107,7 @@ public class Game implements Serializable {
         //SETTERS AND GETTERS FOR Provision LIST
     // Author: Raylee Haws
     // Date: 11/26 
-    public void setDeveloper (ArrayList<ListItem>provision)
+    public void setDeveloper (ArrayList<ListItem>developer)
     {
         this.developer = developer;
     }
