@@ -42,11 +42,11 @@ public class GameControl
     createAnimalList();
     
     createToolList();
-    createDeveloperList();
+   
         //(animal.get(3).getName());
     createProvisionList();
    
-   
+    createDeveloperList();
     
     
      //Animal List Items
@@ -256,7 +256,7 @@ for(int i = 0; i < MAX_ROW; i++)
         
       
         //save the animals into a game
-      game.getDeveloper();
+      game.setDeveloper(developer);
        
     }
 }
