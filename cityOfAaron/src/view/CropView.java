@@ -141,7 +141,7 @@ public static void plantCropsView(CropData cropData) {
 // Methods in the  HelpMenuVeiw class manage the user view
 // Author: Raylee Haws
  
- public static void feedPeopleView() 
+public static void feedPeopleView() 
          
  {
      // Get the needed number of bushels from the user.
@@ -149,22 +149,28 @@ public static void plantCropsView(CropData cropData) {
      
      //Prompt the user to write in the number of bushels they want to set aside to feed the people.
      System.out.format("How many bushels of grain do you want to set aside to feed people?%\n" + neededNumOfBushels);
-     System.out.println("Here is how many of Bushels of wheat you need to feed people\n"); 
-     
+     System.out.println("Here is how many Bushels of wheat you need to feed people\n"); 
+          
      // Get the user's input and save.
-     neededNumOfBushels = keyboard.nextInt();
      int remainingWheat;
-     remainingWheat = CropControl.plantCrops(neededNumOfBushels, cropData);
-     int bushelsSetAside;
-     bushelsSetAside = remainingWheat;
-
-     // Call the feedPeople() method in the control layer.
-     CropControl.feedPeople(neededNumOfBushels, cropData);
-     
-     // output how much wheat is set aside to feed the people with.
-     System.out.format("You now have %d bushels of wheat to feed people. ", cropData.getWheatForPeople());
-     
- }
+     boolean paramsNotOkay;
+      do{
+        paramsNotOkay = false;
+        System.out.println("\nHow many bushels of wheat do you wish to set aside?");
+        neededNumOfBushels = keyboard.nextInt();
+          try{
+            CropControl.feedPeople(neededNumOfBushels, cropData);
+        }
+          
+          catch(CropException e)
+        {
+            System.out.println("I am sorry my master, I cannot do this.");
+            System.out.println(e.getMessage());
+            paramsNotOkay = true;
+        }
+    } while (paramsNotOkay);
+    
+}
  
  
   

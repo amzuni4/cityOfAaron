@@ -165,8 +165,8 @@ cropData.setWheatInStore(remainingWheat);
  * the wheat in store must be positive
  * and greater than the needed number of bushels. 
  */
-    
-    public static int feedPeople(int neededNumOfBushels, CropData cropData)
+ public static int feedPeople(int neededNumOfBushels, CropData cropData) throws CropException
+ 
     {
             
             int remainingWheat;
@@ -174,23 +174,26 @@ cropData.setWheatInStore(remainingWheat);
 
    // If neededNumOfBushels < 0, return -1; invalid entry 
     if(neededNumOfBushels <0)
-        return -1;
-    // If wheatInStore < 0, return -1; 
+        throw new CropException("A negative value was input");
+        
     int wheatInStore = cropData.getWheatInStore();
+    
     // If wheatInStore < neededNumOfBushels, return -1;
     if(wheatInStore < neededNumOfBushels)
-        return -1;
+        throw new CropException("You have an insufficient number of bushels of wheat in the store");
+        
      //remainingWheat = (wheatInStore - neededNumOfBushels)
      remainingWheat = (wheatInStore - neededNumOfBushels);
+     
     //bushelsSetAside = neededNumOfBushels
      bushelsSetAside = neededNumOfBushels;
      cropData.setWheatInStore(wheatInStore);
-     //Save acresPlanted and remainingWheat;
      
     //returns remaining wheat
      return remainingWheat;
      
 }
+
 
 
     
