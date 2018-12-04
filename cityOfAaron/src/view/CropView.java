@@ -24,6 +24,8 @@ public class CropView {
  // Get references to the Game object and the CropData object
  static private Game game = CityOfAaron.getGame();
  static private CropData cropData = game.getCropData();
+ 
+ 
 
     
 
@@ -135,44 +137,46 @@ public static void plantCropsView(CropData cropData) {
         } while (paramsOkay); 
 }
 
+//  // Source code for the HelpMenuView class
+//// The HelpMenuView class is a member of the view layer
+//// Methods in the  HelpMenuVeiw class manage the user view
+//// Author: Raylee Haws 11/29 edited Amy Zuniga 12/4
 
-  // Source code for the HelpMenuView class
-// The HelpMenuView class is a member of the view layer
-// Methods in the  HelpMenuVeiw class manage the user view
-// Author: Raylee Haws
- 
-public static void feedPeopleView() 
+  public static void feedPeopleView(CropData cropData) {
+        //get amount of wheat in store
+        int wheat = cropData.getWheatInStore();
+        //display wheat in store to user
+        System.out.format("There are %d bushels of wheat in store.%n", wheat);
+        
+        boolean ok = true;
+        do {
+            try {
+                //ask user how much wheat to feed the people
+                System.out.print("How much wheat would you like to give to the people?");
+                //get input
+                int wheatForPeople = keyboard.nextInt(); 
+                
+                if (wheatForPeople < 0) {
+                    throw new CropException("Cannot Feed People Negative Amount of Wheat");
+                }
+                
+                if (wheatForPeople > wheat) {
+                    throw new CropException("Cannot Feed People More Wheat than Possessed");
+                }
+                
+                //give to the people
+                CropControl.feedPeople(wheatForPeople, cropData);
+                ok = false;
+            }
+            catch (CropException e) {
+                System.out.println(e.getMessage());
+                ok = true;
+            }
+        } while (ok);
+        
          
- {
-     // Get the needed number of bushels from the user.
-     int neededNumOfBushels = CropControl.feedPeople(0, cropData);
-     
-     //Prompt the user to write in the number of bushels they want to set aside to feed the people.
-     System.out.format("How many bushels of grain do you want to set aside to feed people?%\n" + neededNumOfBushels);
-     System.out.println("Here is how many Bushels of wheat you need to feed people\n"); 
-          
-     // Get the user's input and save.
-     int remainingWheat;
-     boolean paramsNotOkay;
-      do{
-        paramsNotOkay = false;
-        System.out.println("\nHow many bushels of wheat do you wish to set aside?");
-        neededNumOfBushels = keyboard.nextInt();
-          try{
-            CropControl.feedPeople(neededNumOfBushels, cropData);
-        }
-          
-          catch(CropException e)
-        {
-            System.out.println("I am sorry my master, I cannot do this.");
-            System.out.println(e.getMessage());
-            paramsNotOkay = true;
-        }
-    } while (paramsNotOkay);
-    
-}
- 
- 
+        
+    } 
   
  // The displayCropsReport method()
 // Purpose: runs the methods to display crops report
@@ -189,5 +193,10 @@ public static void runCropView()
     buyLandView();
     //call the sellLandView by Amy Zuniga 11.30
     sellLandView();
+    //call the feedPeopleView by Amy Zuniga 12.4
+   feedPeopleView(cropData);
+   //call plantCropsView by Amy Zuniga 12/4
+   plantCropsView(cropData);
+   
 }
 }
