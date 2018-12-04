@@ -116,23 +116,23 @@ public static void buyLand(int acresToBuy, int landPrice, CropData cropData) thr
  * two times the number of acresToPlant 
  */
 
-    public static int plantCrops(int acresToPlant, CropData cropData)
+    public static void plantCrops(int acresToPlant, CropData cropData) throws CropException
 {
    // If acresToPlant < 0, return -1
         if(acresToPlant <0)
-            return -1;
+            throw new CropException("A negative value was input");
     //If acresToPlant > acresOwned, return -1
     int acresOwned = cropData.getAcresOwned();
      if (acresToPlant > acresOwned)
-         return -1;
+         throw new CropException("There's insufficient land owned to plant this crop");
     //If thePopulation < acresToPlant * 10, return -1
     int thePopulation = cropData.getPopulation();
     if (thePopulation < acresToPlant * 10)
-        return -1;
+        throw new CropException("There's insufficient amount of people to plant the crop");
     //If currentBushels < acresToPlant * 2, return -1
     int currentBushels = cropData.getWheatInStore();
     if (currentBushels < acresToPlant * 2)
-        return -1;
+       throw new CropException("There's insufficient wheat to in store to plant crops");
 
  // numOfBushels = acresToPlant / 2 
  int numOfBushels = acresToPlant / 2;
@@ -145,9 +145,7 @@ int acresPlanted = acresToPlant;
 //Save acresPlanted and remainingWheat;
 cropData.setAcresPlanted(acresPlanted);
 cropData.setWheatInStore(remainingWheat);
-
-//Return acresPlanted and remainingWheat;
- return remainingWheat + acresPlanted; 
+ 
 }
      /**
  * Author: Raylee Haws

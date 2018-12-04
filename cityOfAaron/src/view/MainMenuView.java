@@ -81,18 +81,25 @@ gmv.displayMenu();
  }
 
 
- // The startSavedGame method
- // Purpose: Start a saved game
+// The startSavedGame method
+ // Purpose: loads a saved game object from disk and start the game
  // Parameters: none
-  //Returns: none
+ // Returns: none
  // ===================================     
- 
+ public void startSavedGame()
+ {        
+       // get rid of nl character left in the stream
 
-public void startSavedGame()
- {
-     System.out.println("\nStart where you left off.");
- }
-
+       // prompt user and get a file path
+       
+    String name;
+   System.out.println("\nPlease type in your first name: ");
+    name = keyboard.next(
+    );
+      // call the getSavedGame( ) method in the GameControl class to load the game
+ GameControl.getSavedGame();
+      // display the game menu for the loaded game
+}
  // The displayHelpMenuVeiw method
  // Purpose: displays help menu
  // Parameters: none
