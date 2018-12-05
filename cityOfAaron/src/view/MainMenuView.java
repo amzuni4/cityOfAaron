@@ -95,9 +95,6 @@ gmv.displayMenu();
     System.out.println("Start Saved Game Selected");
     Scanner input = new Scanner(System.in);
     
-  
-  
-    
     //Prompt user to get file path + get rid of /n character left in stream
     System.out.println("Please enter the file path to your saved game: ");
     String filePath = keyboard.next();

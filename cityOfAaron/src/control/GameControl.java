@@ -263,9 +263,6 @@ for(int i = 0; i < MAX_ROW; i++)
       game.setDeveloper(developer);
        
     }
-
-    
-
      // the getSavedGame method
     // Purpose: load a saved game from disk
     // Parameters: the file path

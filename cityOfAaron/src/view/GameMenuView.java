@@ -139,16 +139,13 @@ public void viewManageCrops() {
     System.out.println("Saved Game Selected");
     Scanner input = new Scanner(System.in);
     
-  
-   
-    
     //Prompt user to get file path + get rid of /n character left in stream
     System.out.println("Please enter the file path to save your game: ");
     String filePath = keyboard.next();
-// call the savedGame() method in the GameControl class to load the game
+    // call the savedGame() method in the GameControl class to load the game
      GameControl.saveGame(filePath);
-// display the save game menu for the loaded game.
-   MainMenuView mmv = new MainMenuView();
-    mmv.displayMenu();
+    // display the save game menu for the loaded game.
+     MainMenuView mmv = new MainMenuView();
+      mmv.displayMenu();
     }
 }
