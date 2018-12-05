@@ -127,4 +127,28 @@ public void viewManageCrops() {
         lmv.displayMenu();
         
     } 
+ // The startSavedGame method
+ // Purpose: loads a saved game object from disk and start the game
+ // Parameters: none
+ // Returns: none
+ // Author: Amy Zuniga, Raylee Haws, Jeremi Lynch
+ // December 4
+ // ==================
+  public void  saveGame(){
+        // get rid of nl character left in the stream
+    System.out.println("Saved Game Selected");
+    Scanner input = new Scanner(System.in);
+    
+  
+   
+    
+    //Prompt user to get file path + get rid of /n character left in stream
+    System.out.println("Please enter the file path to save your game: ");
+    String filePath = keyboard.next();
+// call the savedGame() method in the GameControl class to load the game
+     GameControl.saveGame(filePath);
+// display the save game menu for the loaded game.
+   MainMenuView mmv = new MainMenuView();
+    mmv.displayMenu();
+    }
 }

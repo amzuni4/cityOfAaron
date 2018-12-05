@@ -7,11 +7,13 @@
 package view;
 import cityofaaron.CityOfAaron;
 import control.GameControl;
+import java.io.PrintWriter;
 import model.Game;
 import model.ListItem;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Iterator;
+import java.util.Scanner;
      
 
 
@@ -91,8 +93,7 @@ ArrayList<ListItem> animal = game.getAnimal();
  //}
        System.out.println(game.getAnimal().get(i).getName() + " " + game.getAnimal().get(i).getNumber());}
  }
-
-
+ 
     
     // The listTools method
  // Purpose: Shows the user a list of the tools in the storehouse

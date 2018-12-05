@@ -7,9 +7,15 @@ package control;
 
 import model.*;
 import cityofaaron.CityOfAaron;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import model.Location;
 import java.util.ArrayList;
 import model.Game;
+import java.io.Serializable;
+
 /**
  *
  * @author admin
@@ -47,7 +53,7 @@ public class GameControl
     createProvisionList();
    
     createDeveloperList();
-    
+   
     
      //Animal List Items
     //calls in createToolList to main menu
@@ -55,7 +61,7 @@ public class GameControl
     // Nov 26, 2018
  //   createToolList();
 
-  
+
  
  
     // Save a reference to the Game object in the static variable
@@ -196,8 +202,6 @@ for(int i = 0; i < MAX_ROW; i++)
         //save the animals into a game
         game.setAnimal(animal);
       
-        
-        //animal.get(3);
     }
      
      
@@ -259,7 +263,60 @@ for(int i = 0; i < MAX_ROW; i++)
       game.setDeveloper(developer);
        
     }
-}
+
+    
+
+     // the getSavedGame method
+    // Purpose: load a saved game from disk
+    // Parameters: the file path
+    // Returns: none
+    // Side Effect: the game reference in the driver is updated
+     // Author: Amy Zuniga, Jeremi Lynch, Raylee Haws
+    // Date: 12/4
+    public static void getSavedGame(String filePath)
+    {
+        Game theGame = null;
+        
+        try (FileInputStream fips = new FileInputStream(filePath))
+        {
+            ObjectInputStream input = new ObjectInputStream(fips);
+            theGame = (Game)  input.readObject();
+            CityOfAaron.setGame(theGame);
+        }
+        catch(Exception e)
+        {
+            System.out.println("\nThere was an error reading the saved game file");
+        }
+    }
+
+     // the SaveGame method
+    // Purpose: saved game to a disk
+    // Parameters: the file path
+    // Returns: noneis saved
+    // Author: Amy Zuniga, Jeremi Lynch, Raylee Haws
+    // Date: 12/4
+    public static void saveGame(String filePath)
+    {
+        Game theGame = null;
+        
+        try (FileOutputStream fops = new FileOutputStream(filePath))
+        {
+            ObjectOutputStream output = new ObjectOutputStream(fops);
+            output.writeObject(theGame);
+            
+            CityOfAaron.setGame(theGame);
+            output.close();
+        }
+        catch(Exception e)
+        {
+            System.out.println("\nThere was an error saving the game file");
+        }
+    }
+    }
+
+  
+     
+
 
     
     

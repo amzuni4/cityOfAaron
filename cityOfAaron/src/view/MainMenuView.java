@@ -9,6 +9,7 @@
 package view;
 import java.util.Scanner;
 import control.*;
+import java.io.Serializable;
 
 
 public class MainMenuView extends MenuView
@@ -85,20 +86,26 @@ gmv.displayMenu();
  // Purpose: loads a saved game object from disk and start the game
  // Parameters: none
  // Returns: none
+ // Author: Amy Zuniga, Raylee Haws, Jeremi Lynch
+ // December 4
  // ===================================     
  public void startSavedGame()
  {        
-       // get rid of nl character left in the stream
-
-       // prompt user and get a file path
-       
-    String name;
-   System.out.println("\nPlease type in your first name: ");
-    name = keyboard.next(
-    );
-      // call the getSavedGame( ) method in the GameControl class to load the game
- GameControl.getSavedGame();
-      // display the game menu for the loaded game
+  
+    System.out.println("Start Saved Game Selected");
+    Scanner input = new Scanner(System.in);
+    
+  
+  
+    
+    //Prompt user to get file path + get rid of /n character left in stream
+    System.out.println("Please enter the file path to your saved game: ");
+    String filePath = keyboard.next();
+    // call the getSavedGame() method in the GameControl class to load the game
+     GameControl.getSavedGame(filePath);
+    // display the game menu for the loaded game.
+    GameMenuView gm = new GameMenuView();
+    gm.displayMenu();
 }
  // The displayHelpMenuVeiw method
  // Purpose: displays help menu
