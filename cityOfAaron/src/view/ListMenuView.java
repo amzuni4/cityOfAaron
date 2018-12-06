@@ -37,13 +37,16 @@ public class ListMenuView extends MenuView {
                 + "**********************************\n"
                 + "* CITY OF AARON: LIST MENU  *\n"
                 + "**********************************\n"
-                + " 1 - List the animals in the storehouse\n" 
-                + "2 -  Print the List Of Animals in the storehouse"
+                + " 1 - List the animals in the storehouse\n"
+                + " 2 - Print the List Of Animals in the storehouse\n"
                 + " 3 - List the tools in the storehouse\n"
-                + " 4 - List the provisions in the storehouse\n"
-                + " 5 - List the developers of this game\n"
-                + " 6 - Back to Main Menu",
-                5);
+                + " 4-  Print the Tools in the storehouse\n"
+                + " 5 - List the provisions in the storehouse\n"
+                + " 6 - Print the provisions in the storehouse\n"
+                + " 7 - List the developers of this game\n"
+                + " 8 - Print the developers of the game\n"
+                + " 9 - Back to Main Menu",
+                9);
     }
 
 // The doAction method
@@ -57,20 +60,28 @@ public class ListMenuView extends MenuView {
             case 1: // calls listAnimals function
                 listAnimals();
                 break;
-            case 2: 
+            case 2:
                 outPutListAnimals();
                 break;
             case 3: // calls a ListTools function
                 listTools();
                 break;
-            case 4: // calls list provisions
+            case 4:
+                outPutListTools();
+                break;
+            case 5: // calls list provisions
                 listProvisions();
                 break;
-            case 5: // save game
+            case 6:
+                outPutListProvisions();
+                break;
+            case 7: // save game
                 listTeam();
                 break;
-                
-            case 6:
+            case 8:
+                outPutListTeam();
+                break;
+            case 9:
                 System.out.println("Return to Main Menu.");
         }
     }
@@ -105,23 +116,26 @@ public class ListMenuView extends MenuView {
 // Author: Amy Zuniga
 // Date Modified: Nov 26, 2018
 //  ===================================
-    public static void outPutListAnimals(){
+    public static void outPutListAnimals() {
         Scanner keyboard = new Scanner(System.in);
         //  declare a string to hold the file name
         // prompt the user for a file name, get and save the user’s input
         String filePath;
-        
+
         System.out.println("Please enter file name for the list of Animals ending in .txt: ");
         filePath = keyboard.next();
         // declare a reference to a PrintWriter,ln  object (opens a new file print writer prints in a certain wya
         try (PrintWriter out = new PrintWriter(filePath);) {
 
-            
+            String heading1 = "Animal";
+            String heading2 = "Number";
+            out.printf("%-15s %15s %n", heading1, heading2);
+            out.printf("---------------");
             Game game = CityOfAaron.getGame();
             ArrayList<ListItem> animal = game.getAnimal();
-            for (int i = 0; i < game.getAnimal().size(); i++){
-                    
-                   out.println(game.getAnimal().get(i).getName() + " " + game.getAnimal().get(i).getNumber());
+            for (int i = 0; i < game.getAnimal().size(); i++) {
+                out.printf("%-15s %15s %n", game.getAnimal().get(i).getName(), game.getAnimal().get(i).getNumber());
+
             }
 
         } catch (IOException e) {
@@ -146,6 +160,17 @@ public class ListMenuView extends MenuView {
         }
     }
 
+//      The outputListTools method
+//  Purpose: Shows the user a list of the animals in the storehouse from GameControl
+//  Parameters: none
+//  Returns: none
+// Author: Jeremi Lynch
+// Date Modified: Dec 8, 2018
+//  ===================================
+    public static void outPutListTools() {
+        //fill in for 12/8 assignment
+    }
+
     // The listProvisions method
     // Purpose: Shows the user a list of the provisions in the storehouse
     // Parameters: none
@@ -161,6 +186,17 @@ public class ListMenuView extends MenuView {
 
     }
 
+    //      The outputListTools method
+//  Purpose: Shows the user a list of the animals in the storehouse from GameControl
+//  Parameters: none
+//  Returns: none
+// Author: Raylee Haws
+// Date Modified: Dec 8, 2018
+//  ===================================
+    public static void outPutListProvisions() {
+        //fill in for 12/8 assignment
+    }
+
     // The listTeam method
     // Purpose: Shows the user a list of the developers of this game
     // Parameters: none
@@ -174,5 +210,42 @@ public class ListMenuView extends MenuView {
         for (int i = 0; i < developer.size(); i++) {
             System.out.println(developer.get(i).getName() + " " + developer.get(i).getNumber());
         }
+    }
+    
+      //      The outputListTools method
+//  Purpose: Shows the user a list of the animals in the storehouse from GameControl
+//  Parameters: none
+//  Returns: none
+// Author: Amy Zuniga
+// Date Modified: Dec 8, 2018
+//  ===================================
+    public static void outPutListTeam() {
+
+        Scanner keyboard = new Scanner(System.in);
+        //  declare a string to hold the file name
+        // prompt the user for a file name, get and save the user’s input
+        String filePath;
+
+        System.out.println("Please enter file name for the list of Developers on the team ending in .txt: ");
+        filePath = keyboard.next();
+        // declare a reference to a PrintWriter,ln  object (opens a new file print writer prints in a certain wya
+        try (PrintWriter out = new PrintWriter(filePath);) {
+
+            String heading1 = "Name";
+            String heading2 = "Number";
+            out.printf("%-15s %15s %n", heading1, heading2);
+          //  out.printf("-------------------------------");
+            Game game = CityOfAaron.getGame();
+            ArrayList<ListItem> developer = game.getDeveloper();
+            for (int i = 0; i < game.getDeveloper().size(); i++) {
+                out.printf("%-15s %15s %n", game.getDeveloper().get(i).getName(), game.getDeveloper().get(i).getNumber());
+
+            }
+
+        } catch (IOException e) {
+            //output error message
+            System.out.println("File Error");
+        }
+
     }
 }
