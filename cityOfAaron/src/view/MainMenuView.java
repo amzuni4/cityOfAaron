@@ -19,7 +19,7 @@ public MainMenuView()
 {
         super( "\n" +
                    "**********************************\n" +
-                   "* CITY OF AARON: MAIN GAME MENU  *\n" +
+                   "* CITY OF AARON: MAIN Menu View  *\n" +
                    "**********************************\n" +
                    " 1 - Start new game\n" +
                    " 2 - Get and start a saved game\n" +

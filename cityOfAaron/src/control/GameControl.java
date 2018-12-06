@@ -270,7 +270,7 @@ for(int i = 0; i < MAX_ROW; i++)
     // Side Effect: the game reference in the driver is updated
      // Author: Amy Zuniga, Jeremi Lynch, Raylee Haws
     // Date: 12/4
-    public static void getSavedGame(String filePath)
+    public static void getSavedGame(String filePath) // really loadGame
     {
         Game theGame = null;
         
@@ -287,7 +287,7 @@ for(int i = 0; i < MAX_ROW; i++)
     }
 
      // the SaveGame method
-    // Purpose: saved game to a disk
+    // Purpose: saves game to a file
     // Parameters: the file path
     // Returns: noneis saved
     // Author: Amy Zuniga, Jeremi Lynch, Raylee Haws

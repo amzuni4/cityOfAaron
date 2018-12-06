@@ -27,13 +27,14 @@ public GameMenuView()
 {
        super ("\n" +
                    "**********************************\n" +
-                   "* CITY OF AARON: GAME MENU  *\n" +
+                   "* CITY OF AARON: GAME MENU View *\n" +
                    "**********************************\n" +
                    " 1 - View the map\n" +
                    " 2 - View/Print a list\n" +
                    " 3 - Move to a new location\n" +
                    " 4 - Manage the crops\n" +
-                   " 5 - Return to the Main menu", 5); 
+                   " 5 - Save a Game " +
+                   " 6 - Return to the Main menu" , 6);
                    
       
 }
@@ -61,8 +62,11 @@ public GameMenuView()
             case 4: // save game
                 viewManageCrops();
                 break;
-            case 5:
+                case 5: 
+                startSavedGame();
+            case 6:
                 System.out.println("Return to Main Menu.");
+            
 
         }
 }
@@ -134,7 +138,7 @@ public void viewManageCrops() {
  // Author: Amy Zuniga, Raylee Haws, Jeremi Lynch
  // December 4
  // ==================
-  public void  saveGame(){
+  public void  startSavedGame(){
         // get rid of nl character left in the stream
     System.out.println("Saved Game Selected");
     Scanner input = new Scanner(System.in);
@@ -142,7 +146,7 @@ public void viewManageCrops() {
     //Prompt user to get file path + get rid of /n character left in stream
     System.out.println("Please enter the file path to save your game: ");
     String filePath = keyboard.next();
-    // call the savedGame() method in the GameControl class to load the game
+    // call the save Game() method in the GameControl class to load the game
      GameControl.saveGame(filePath);
     // display the save game menu for the loaded game.
      MainMenuView mmv = new MainMenuView();
