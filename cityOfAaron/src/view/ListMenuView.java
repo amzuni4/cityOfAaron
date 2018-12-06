@@ -7,6 +7,7 @@
 package view;
 import cityofaaron.CityOfAaron;
 import control.GameControl;
+import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import model.Game;
 import model.ListItem;
@@ -14,6 +15,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Iterator;
 import java.util.Scanner;
+import java.io.PrintWriter;
+import java.io.IOException;
      
 
 
@@ -93,7 +96,60 @@ ArrayList<ListItem> animal = game.getAnimal();
  //}
        System.out.println(game.getAnimal().get(i).getName() + " " + game.getAnimal().get(i).getNumber());}
  }
+    
+     // The outputListAnimals method
+ // Purpose: Shows the user a list of the animals in the storehouse from GameControl
+ // Parameters: none
+ // Returns: none
+ //Author: Amy Zuniga
+// Date Modified: Nov 26, 2018
+ // ===================================
+ public static void outPutListAnimals () throws FileNotFoundException
+ {
+    Scanner keyboard = new Scanner(System.in);
+     // declare a string to hold the file name
+     String listPathway;
+     // declare a reference to a PrintWriter object
+      
+     // prompt the user for a file name, get and save the user’s input
+     System.out.println("Please enter file path for the list of Animals: ");
+             listPathway = keyboard.next();
+             
+             
+    // declare a reference to a PrintWriter object
+
+        //try-with-resources
+        try(PrintWriter out = new PrintWriter(listPathway);)
+            
+        {
+             // create the PrintWriter object
+            out.println("Animal: " + listPathway + "\tNumber");
+                    
+             // get a reference to the ArrayList you want to output
+             ArrayList <ListItem> animal = game.getAnimal();
+             
+             // output a heading for the report
+             out.println("\n List of Animals     ");
+     // use a for loop to get the data from the ArrayList
+     for (listItem item : animal){
+         out.printf
+     }
+     // and output it
+        }
+       // catch(Exception e)
+        {
+            // output error message
+        }
  
+
+ }
+    
+    
+    
+    
+    
+    
+    
     
     // The listTools method
  // Purpose: Shows the user a list of the tools in the storehouse
