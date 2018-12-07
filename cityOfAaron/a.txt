@@ -1,0 +1,7 @@
+Animal                   Number 
+
+-------------------------------
+Cows                        122 
+Horses                      222 
+Pigs                         30 
+Goats                        80 

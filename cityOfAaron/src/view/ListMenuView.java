@@ -37,10 +37,10 @@ public class ListMenuView extends MenuView {
                 + "**********************************\n"
                 + "* CITY OF AARON: LIST MENU VIEW  *\n"
                 + "**********************************\n"
-                + " 1 - List the animals in the storehouse\n"
+                + " 1 - List or Print the animals in the storehouse\n"
                 + " 2 - List the tools in the storehouse\n"
                 + " 3 - List the provisions in the storehouse\n"
-                + " 4 - List the developers of this game\n"
+                + " 4 - List or Print the developers of the game\n"
                 + " 5 - Back to Main Menu",
                 5);
     }
@@ -54,7 +54,7 @@ public class ListMenuView extends MenuView {
     public void doAction(int option) {
         switch (option) {
             case 1: // calls listAnimals function
-                listAnimals();
+                outPutListAnimals();
                 break;
             case 2: // calls a ListTools function
                 listTools();
@@ -63,7 +63,7 @@ public class ListMenuView extends MenuView {
                 listProvisions();
                 break;
             case 4: // save game
-                listTeam();
+                outPutListTeam();
                 break;
             case 5:
                 System.out.println("Return to Main Menu.");
@@ -75,9 +75,9 @@ public class ListMenuView extends MenuView {
     // Parameters: none
     // Returns: none
     //Author: Amy Zuniga
-// Date Modified: Nov 26, 2018
+    // Date Modified: Dec 6, 2018
     // ===================================
-    public void listAnimals() {
+    public static void listAnimals() {
         System.out.println("View List of Animals in Storehouse");
         // get the reference to the game object that has beens stored in the CityOfAaron class.
 // Save the reference in the variable “game"
@@ -91,43 +91,49 @@ public class ListMenuView extends MenuView {
             //}
             System.out.println(game.getAnimal().get(i).getName() + " " + game.getAnimal().get(i).getNumber());
         }
-        System.out.println("\nWrite the List of Animals to a file");
+
         ListMenuView.outPutListAnimals();
 
     }
 
-//      The outputListAnimals method
+//  The outputListAnimals method
 //  Purpose: Shows the user a list of the animals in the storehouse from GameControl
 //  Parameters: none
 //  Returns: none
 // Author: Amy Zuniga
-// Date Modified: Nov 26, 2018
+// Date Modified: Dec, 6, 2018
 //  ===================================
     public static void outPutListAnimals() {
-        Scanner keyboard = new Scanner(System.in);
+
         //  declare a string to hold the file name
         // prompt the user for a file name, get and save the user’s input
         String filePath;
 
-        System.out.println("Please enter file name for the list of Animals ending in .txt: ");
-        filePath = keyboard.next();
-        // declare a reference to a PrintWriter,ln  object (opens a new file print writer prints in a certain wya
-        try (PrintWriter out = new PrintWriter(filePath);) {
+        System.out.println("Display List of Animals? Type 1,  Save the list of Animals to a file? Type 2 ");
+        int answer = keyboard.nextInt();
+        if (answer == 1) {
+            listAnimals();
+        } else {
+            System.out.println("Please enter file name for the list of Animals ending in .txt: ");
+            filePath = keyboard.next();
+            // declare a reference to a PrintWriter,ln  object (opens a new file print writer prints in a certain wya
+            try (PrintWriter out = new PrintWriter(filePath);) {
 
-            String heading1 = "Animal";
-            String heading2 = "Number";
-            out.printf("%-15s %15s %n\n", heading1, heading2);
-            out.println("-------------------------------");
-            Game game = CityOfAaron.getGame();
-            ArrayList<ListItem> animal = game.getAnimal();
-            for (int i = 0; i < game.getAnimal().size(); i++) {
-                out.printf("%-15s %15s %n", game.getAnimal().get(i).getName(), game.getAnimal().get(i).getNumber());
+                String heading1 = "Animal";
+                String heading2 = "Number";
+                out.printf("%-10s %10s %n\n", heading1, heading2);
+                out.printf("%-10s %10s %n\n", "-------", "-------");
+                Game game = CityOfAaron.getGame();
+                ArrayList<ListItem> animal = game.getAnimal();
+                for (int i = 0; i < game.getAnimal().size(); i++) {
+                    out.printf("%-10s %10s %n", game.getAnimal().get(i).getName(), game.getAnimal().get(i).getNumber());
 
+                }
+
+            } catch (IOException e) {
+                //output error message
+                System.out.println("File Error");
             }
-
-        } catch (IOException e) {
-            //output error message
-            System.out.println("File Error");
         }
 
     }
@@ -135,6 +141,8 @@ public class ListMenuView extends MenuView {
     // Purpose: Shows the user a list of the tools in the storehouse
     // Parameters: none
     // Returns: none
+    // Author: Jeremi Lynch
+    // Last Update: 11/26
     // ===================================
 
     public void listTools() {
@@ -162,6 +170,8 @@ public class ListMenuView extends MenuView {
     // Purpose: Shows the user a list of the provisions in the storehouse
     // Parameters: none
     // Returns: none
+    // Author: Raylee Haws
+    // Date Modified: Dec 8
     // ===================================
     public void listProvisions() {
         System.out.println("View List of Provisions in Storehouse");
@@ -188,8 +198,10 @@ public class ListMenuView extends MenuView {
     // Purpose: Shows the user a list of the developers of this game
     // Parameters: none
     // Returns: none
+    // Author: Amy Zuniga
+    // Date: 12/6
     // ===================================
-    public void listTeam() {
+    public static void listTeam() {
         System.out.println("View List of Developers of the Game");
 
         Game game = CityOfAaron.getGame();
@@ -197,10 +209,9 @@ public class ListMenuView extends MenuView {
         for (int i = 0; i < developer.size(); i++) {
             System.out.println(developer.get(i).getName() + " " + developer.get(i).getNumber());
         }
-        System.out.println("\nWrite the team member list to a file");
+
         ListMenuView.outPutListTeam();
 
-        
     }
 
     //      The outputListTools method
@@ -208,35 +219,39 @@ public class ListMenuView extends MenuView {
 //  Parameters: none
 //  Returns: none
 // Author: Amy Zuniga
-// Date Modified: Dec 8, 2018
+// Date Modified: Dec 6, 2018
 //  ===================================
     public static void outPutListTeam() {
 
-        Scanner keyboard = new Scanner(System.in);
         //  declare a string to hold the file name
         // prompt the user for a file name, get and save the user’s input
         String filePath;
 
-        System.out.println("Please enter file name for the list of Developers on the team ending in .txt: ");
-        filePath = keyboard.next();
-        // declare a reference to a PrintWriter,ln  object (opens a new file print writer prints in a certain wya
-        try (PrintWriter out = new PrintWriter(filePath);) {
+        System.out.println("Display List of Devlopers on the Team? Type 1,  Save the list of Developers to a file? Type 2 ");
+        int answer = keyboard.nextInt();
+        if (answer == 1) {
+            listTeam();
+        } else {
+            System.out.println("Please enter file name for the list of Developers on the team ending in .txt: ");
+            filePath = keyboard.next();
+            // declare a reference to a PrintWriter,ln  object (opens a new file print writer prints in a certain wya
+            try (PrintWriter out = new PrintWriter(filePath);) {
 
-            String heading1 = "Name";
-            String heading2 = "Number";
-            out.printf("%-15s %15s %n", heading1, heading2);
-            out.println("-------------------------------");
-            Game game = CityOfAaron.getGame();
-            ArrayList<ListItem> developer = game.getDeveloper();
-            for (int i = 0; i < game.getDeveloper().size(); i++) {
-                out.printf("%-15s %15s %n", game.getDeveloper().get(i).getName(), game.getDeveloper().get(i).getNumber());
+                String heading1 = "Name";
+                String heading2 = "Number";
+                out.printf("%-13s %12s %n\n", heading1, heading2);
+                out.printf("%-13s %13s %n\n", "-----------", "----------");
+                Game game = CityOfAaron.getGame();
+                ArrayList<ListItem> developer = game.getAnimal();
+                for (int i = 0; i < game.getDeveloper().size(); i++) {
+                    out.printf("%-13s %8s %n", game.getDeveloper().get(i).getName(), game.getDeveloper().get(i).getNumber());
 
+                }
+
+            } catch (IOException e) {
+                //output error message
+                System.out.println("File Error");
             }
-
-        } catch (IOException e) {
-            //output error message
-            System.out.println("File Error");
         }
-
     }
 }
