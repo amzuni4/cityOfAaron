@@ -5,11 +5,13 @@
  */
 package model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author jeremilynch
  */
-public class Location {
+public class Location implements Serializable {
 //
 //    public void setDescription(String river) {
 //        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

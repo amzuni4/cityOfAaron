@@ -24,7 +24,7 @@ public HelpMenuView()
 {
        super("\n" +
                    "**********************************\n" +
-                   "* CITY OF AARON: HELP MENU  *\n" +
+                   "* CITY OF AARON: HELP MENU VIEW *\n" +
                    "**********************************\n" +
                    " 1 - What are the goals of the game\n" +
                    " 2 - Where is the city of Aaron?\n" +

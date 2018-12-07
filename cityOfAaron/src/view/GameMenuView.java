@@ -24,15 +24,14 @@ public class GameMenuView extends MenuView {
     public GameMenuView() {
         super("\n"
                 + "**********************************\n"
-                + "* CITY OF AARON: GAME MENU View *\n"
+                + "* CITY OF AARON: GAME MENU VIEW *\n"
                 + "**********************************\n"
                 + " 1 - View the map\n"
                 + " 2 - View/Print a list\n"
                 + " 3 - Move to a new location\n"
                 + " 4 - Manage the crops\n"
-                + " 5 - Start a saved Game\n"
-                + " 6 - Save a Game to a File\n"
-                + " 7 - Return to the Main menu", 7);
+                + " 5 - Save Current Game\n"
+                + " 6 - Return to the Main menu", 6);
 
     }
 
@@ -56,11 +55,10 @@ public class GameMenuView extends MenuView {
             case 4: // save game
                 viewManageCrops();
                 break;
-            case 5:
-                startSavedGame();
-            case 6:
+            case 5: // save game
                 saveGame();
-             case 7:
+                break;
+            case 6:
                 System.out.println("Return to Main Menu.");
 
         }
@@ -125,47 +123,21 @@ public class GameMenuView extends MenuView {
         lmv.displayMenu();
 
     }
-    // The startSavedGame method
-    // Purpose: loads a saved game object from disk and start the game
-    // Parameters: none
-    // Returns: none
-    // Author: Amy Zuniga, Raylee Haws, Jeremi Lynch
-    // December 4
-    // ==================
 
-    public void startSavedGame() {
-        // get rid of nl character left in the stream
-        System.out.println("Start a Saved Game Selected");
-        Scanner input = new Scanner(System.in);
-
-        //Prompt user to get file path + get rid of /n character left in stream
-        System.out.println("Please enter the file path to save your game: ");
-        String filePath = keyboard.next();
-        // call the save getSavedGame() method in the GameControl class to load the game
-        GameControl.getSavedGame(filePath);
-        // display the save game menu for the loaded game.
-        MainMenuView mmv = new MainMenuView();
-        mmv.displayMenu();
-    }
     // Save Game method
     // Purpose: loads a saved game object from disk and start the game
     // Parameters: none
     // Returns: none
     // Author: Amy Zuniga, Raylee Haws, Jeremi Lynch
     // December 4
-
     public void saveGame() {
-        // get rid of nl character left in the stream
-        System.out.println("Save the Game to a file selected");
-        Scanner input = new Scanner(System.in);
-
         //Prompt user to get file path + get rid of /n character left in stream
-        System.out.println("Please enter the file path to save your game: ");
+        System.out.println("Save game to  file and end the filename with .txt ");
         String filePath = keyboard.next();
-        // call the save Game() method in the GameControl class to load the game
+        
+        // call the save Game() method in the GameControl class
         GameControl.saveGame(filePath);
-        // display the save game menu for the loaded game.
-        MainMenuView mmv = new MainMenuView();
-        mmv.displayMenu();
+        
+       
     }
 }

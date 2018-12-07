@@ -35,18 +35,14 @@ public class ListMenuView extends MenuView {
     public ListMenuView() {
         super("\n"
                 + "**********************************\n"
-                + "* CITY OF AARON: LIST MENU  *\n"
+                + "* CITY OF AARON: LIST MENU VIEW  *\n"
                 + "**********************************\n"
                 + " 1 - List the animals in the storehouse\n"
-                + " 2 - Print the List Of Animals in the storehouse\n"
-                + " 3 - List the tools in the storehouse\n"
-                + " 4-  Print the Tools in the storehouse\n"
-                + " 5 - List the provisions in the storehouse\n"
-                + " 6 - Print the provisions in the storehouse\n"
-                + " 7 - List the developers of this game\n"
-                + " 8 - Print the developers of the game\n"
-                + " 9 - Back to Main Menu",
-                9);
+                + " 2 - List the tools in the storehouse\n"
+                + " 3 - List the provisions in the storehouse\n"
+                + " 4 - List the developers of this game\n"
+                + " 5 - Back to Main Menu",
+                5);
     }
 
 // The doAction method
@@ -60,28 +56,16 @@ public class ListMenuView extends MenuView {
             case 1: // calls listAnimals function
                 listAnimals();
                 break;
-            case 2:
-                outPutListAnimals();
-                break;
-            case 3: // calls a ListTools function
+            case 2: // calls a ListTools function
                 listTools();
                 break;
-            case 4:
-                outPutListTools();
-                break;
-            case 5: // calls list provisions
+            case 3: // calls list provisions
                 listProvisions();
                 break;
-            case 6:
-                outPutListProvisions();
-                break;
-            case 7: // save game
+            case 4: // save game
                 listTeam();
                 break;
-            case 8:
-                outPutListTeam();
-                break;
-            case 9:
+            case 5:
                 System.out.println("Return to Main Menu.");
         }
     }
@@ -107,6 +91,9 @@ public class ListMenuView extends MenuView {
             //}
             System.out.println(game.getAnimal().get(i).getName() + " " + game.getAnimal().get(i).getNumber());
         }
+        System.out.println("\nWrite the List of Animals to a file");
+        ListMenuView.outPutListAnimals();
+
     }
 
 //      The outputListAnimals method
@@ -129,8 +116,8 @@ public class ListMenuView extends MenuView {
 
             String heading1 = "Animal";
             String heading2 = "Number";
-            out.printf("%-15s %15s %n", heading1, heading2);
-            out.printf("---------------");
+            out.printf("%-15s %15s %n\n", heading1, heading2);
+            out.println("-------------------------------");
             Game game = CityOfAaron.getGame();
             ArrayList<ListItem> animal = game.getAnimal();
             for (int i = 0; i < game.getAnimal().size(); i++) {
@@ -210,9 +197,13 @@ public class ListMenuView extends MenuView {
         for (int i = 0; i < developer.size(); i++) {
             System.out.println(developer.get(i).getName() + " " + developer.get(i).getNumber());
         }
+        System.out.println("\nWrite the team member list to a file");
+        ListMenuView.outPutListTeam();
+
+        
     }
-    
-      //      The outputListTools method
+
+    //      The outputListTools method
 //  Purpose: Shows the user a list of the animals in the storehouse from GameControl
 //  Parameters: none
 //  Returns: none
@@ -234,7 +225,7 @@ public class ListMenuView extends MenuView {
             String heading1 = "Name";
             String heading2 = "Number";
             out.printf("%-15s %15s %n", heading1, heading2);
-          //  out.printf("-------------------------------");
+            out.println("-------------------------------");
             Game game = CityOfAaron.getGame();
             ArrayList<ListItem> developer = game.getDeveloper();
             for (int i = 0; i < game.getDeveloper().size(); i++) {

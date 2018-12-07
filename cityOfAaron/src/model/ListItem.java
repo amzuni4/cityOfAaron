@@ -5,8 +5,10 @@
  *  Author: Raylee Haws
  */
 package model;
+import java.io.Serializable;
 
-public class ListItem {
+
+public class ListItem  implements Serializable{
     
     private String name;
     private int number;
@@ -17,7 +19,13 @@ public class ListItem {
 // Returns: name & number
 // Author: Amy Zuniga
 // ===================================
- public ListItem (String name, int number) // its all the items in the list for animals list
+
+    /**
+     *
+     * @param name
+     * @param number
+     */
+ public ListItem (String name, int number)// its all the items in the list for animals list
  {
      
      setName(name); // calls the pre-created function in the class

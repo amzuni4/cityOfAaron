@@ -263,30 +263,28 @@ for(int i = 0; i < MAX_ROW; i++)
       game.setDeveloper(developer);
        
     }
+
      // the getSavedGame method
     // Purpose: load a saved game from disk
     // Parameters: the file path
     // Returns: none
     // Side Effect: the game reference in the driver is updated
-     // Author: Amy Zuniga, Jeremi Lynch, Raylee Haws
-    // Date: 12/4
-    public static void getSavedGame(String filePath) // really loadGame
+    public static void getSavedGame(String filePath) throws Exception
     {
         Game theGame = null;
         
         try (FileInputStream fips = new FileInputStream(filePath))
         {
             ObjectInputStream input = new ObjectInputStream(fips);
-            theGame = (Game)  input.readObject();
+            theGame = (Game) input.readObject(); //type conversion
             CityOfAaron.setGame(theGame);
         }
         catch(Exception e)
         {
-            System.out.println("\nThere was an error reading the saved game file");
+            throw new Exception("\nThere was an error reading the saved game file");
         }
     }
-
-     // the SaveGame method
+ // the SaveGame method
     // Purpose: saves game to a file
     // Parameters: the file path
     // Returns: noneis saved
@@ -294,14 +292,13 @@ for(int i = 0; i < MAX_ROW; i++)
     // Date: 12/4
     public static void saveGame(String filePath)
     {
-        Game theGame = null;
+        Game theGame = CityOfAaron.getGame();
         
         try (FileOutputStream fops = new FileOutputStream(filePath))
         {
             ObjectOutputStream output = new ObjectOutputStream(fops);
             output.writeObject(theGame);
             
-            CityOfAaron.setGame(theGame);
             output.close();
         }
         catch(Exception e)
@@ -309,7 +306,7 @@ for(int i = 0; i < MAX_ROW; i++)
             System.out.println("\nThere was an error saving the game file");
         }
     }
-    }
+}
 
   
      
