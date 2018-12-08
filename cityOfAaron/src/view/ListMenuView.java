@@ -39,7 +39,7 @@ public class ListMenuView extends MenuView {
                 + "**********************************\n"
                 + " 1 - List or Print the animals in the storehouse\n"
                 + " 2 - List the tools in the storehouse\n"
-                + " 3 - List the provisions in the storehouse\n"
+                + " 3 - List or Print the provisions in the storehouse\n"
                 + " 4 - List or Print the developers of the game\n"
                 + " 5 - Back to Main Menu",
                 5);
@@ -60,7 +60,7 @@ public class ListMenuView extends MenuView {
                 listTools();
                 break;
             case 3: // calls list provisions
-                listProvisions();
+                outPutListProvisions();
                 break;
             case 4: // save game
                 outPutListTeam();
@@ -163,14 +163,14 @@ public class ListMenuView extends MenuView {
 // Date Modified: Dec 8, 2018
 //  ===================================
     public static void outPutListTools() {
-       
-     String filePath;
+
+        String filePath;
 
         System.out.println("Display List of Tools? Type 1,  Save the list of Tools to a file? Type 2 ");
         int answer = keyboard.nextInt();
         if (answer == 1) {
             listTools();
-            
+
         } else {
             System.out.println("Please enter file name for the list of Tools ending in .txt: ");
             filePath = keyboard.next();
@@ -192,13 +192,9 @@ public class ListMenuView extends MenuView {
                 // error message
                 System.out.println("File Error");
             }
-        }  
+        }
     }
 
-    
-    
-    
-    
     // The listProvisions method
     // Purpose: Shows the user a list of the provisions in the storehouse
     // Parameters: none
@@ -216,15 +212,46 @@ public class ListMenuView extends MenuView {
 
     }
 
-    //      The outputListTools method
-//  Purpose: Shows the user a list of the animals in the storehouse from GameControl
+    //  The outputListProvisions method
+//  Purpose: Shows the user a list of the Provisions in the storehouse from GameControl
 //  Parameters: none
 //  Returns: none
 // Author: Raylee Haws
-// Date Modified: Dec 8, 2018
+// Date Modified: Dec, 8, 2018
 //  ===================================
     public static void outPutListProvisions() {
-        //fill in for 12/8 assignment
+
+        //  declare a string to hold the file name
+        // prompt the user for a file name, get and save the user’s input
+        String filePath;
+
+        System.out.println("Display List of Provisions? Type 1,  Save the list of Provisions to a file? Type 2 ");
+        int answer = keyboard.nextInt();
+        if (answer == 1) {
+            listAnimals();
+        } else {
+            System.out.println("Please enter file name for the list of Provisions ending in .txt: ");
+            filePath = keyboard.next();
+            // declare a reference to a PrintWriter,ln  object (opens a new file print writer prints in a certain wya
+            try (PrintWriter out = new PrintWriter(filePath);) {
+
+                String heading1 = "Provisions";
+                String heading2 = "Number";
+                out.printf("%-10s %10s %n\n", heading1, heading2);
+                out.printf("%-10s %10s %n\n", "-------", "-------");
+                Game game = CityOfAaron.getGame();
+                ArrayList<ListItem> provision = game.getProvision();
+                for (int i = 0; i < game.getProvision().size(); i++) {
+                    out.printf("%-10s %10s %n", game.getProvision().get(i).getName(), game.getProvision().get(i).getNumber());
+
+                }
+
+            } catch (IOException e) {
+                //output error message
+                System.out.println("File Error");
+            }
+        }
+
     }
 
     // The listTeam method

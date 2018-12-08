@@ -1,0 +1,8 @@
+Tool           Number 
+
+-------       ------- 
+
+Hammer              2 
+Ax                 12 
+Scythe             30 
+Plow               80 
