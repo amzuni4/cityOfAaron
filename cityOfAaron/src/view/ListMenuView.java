@@ -145,7 +145,7 @@ public class ListMenuView extends MenuView {
     // Last Update: 11/26
     // ===================================
 
-    public void listTools() {
+    public static void listTools() {
         System.out.println("View List of Tools in Storehouse");
         Game game = CityOfAaron.getGame();
         ArrayList<ListItem> tool = game.getTool();
@@ -163,9 +163,42 @@ public class ListMenuView extends MenuView {
 // Date Modified: Dec 8, 2018
 //  ===================================
     public static void outPutListTools() {
-        //fill in for 12/8 assignment
+       
+     String filePath;
+
+        System.out.println("Display List of Tools? Type 1,  Save the list of Tools to a file? Type 2 ");
+        int answer = keyboard.nextInt();
+        if (answer == 1) {
+            listTools();
+            
+        } else {
+            System.out.println("Please enter file name for the list of Tools ending in .txt: ");
+            filePath = keyboard.next();
+            // declare a reference to a PrintWriter,ln  object (opens a new file print writer prints the disign
+            try (PrintWriter out = new PrintWriter(filePath);) {
+
+                String heading1 = "Tool";
+                String heading2 = "Number";
+                out.printf("%-10s %10s %n\n", heading1, heading2);
+                out.printf("%-10s %10s %n\n", "-------", "-------");
+                Game game = CityOfAaron.getGame();
+                ArrayList<ListItem> tool = game.getTool();
+                for (int i = 0; i < game.getTool().size(); i++) {
+                    out.printf("%-10s %10s %n", game.getTool().get(i).getName(), game.getTool().get(i).getNumber());
+
+                }
+
+            } catch (IOException e) {
+                // error message
+                System.out.println("File Error");
+            }
+        }  
     }
 
+    
+    
+    
+    
     // The listProvisions method
     // Purpose: Shows the user a list of the provisions in the storehouse
     // Parameters: none
