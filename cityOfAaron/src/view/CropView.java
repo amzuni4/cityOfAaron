@@ -186,22 +186,22 @@ public static void plantCropsView(CropData cropData) {
 // Date Modified: December 11, 2018
   public static void cropReportView()
   {
-      CropData cd = new CropData();
-          System.out.println("Display the Year Number: " +  cd.getYear());
+      //ropData cd = new CropData();
+          System.out.println("Display the Year Number: " +  cropData.getYear());
        
-          System.out.println("Display the number of People who starved: " + cd.getNumberWhoDied());
+          System.out.println("Display the number of People who starved: " + cropData.getNumberWhoDied());
        
-          System.out.println("Display the amount of new individuals in the city: " + cd.getNewPeople());
+          System.out.println("Display the amount of new individuals in the city: " + cropData.getNewPeople());
           
-          System.out.println("Display the current population: " + cd.getNewPeople());
+          System.out.println("Display the current population: " + cropData.getNewPeople());
           
-          System.out.println("Get the number of acres of crop land owned by the city: " + cd.getAcresPlanted());
+          System.out.println("Get the number of acres of crop land owned by the city: " + cropData.getAcresOwned());
          
-          System.out.println("Get the number of bushels per acre in this year's harvest: " + cd.getCropYield());
+          System.out.println("Get the number of bushels per acre in this year's harvest: " + cropData.getCropYield());
           
-          System.out.println("Get the number of bushels harvested : " + cd.getHarvest());
+          System.out.println("Get the number of bushels harvested : " + cropData.getHarvest());
         
-          System.out.println("Display the number of bushels of wheat in store: " + cd.getWheatInStore());
+          System.out.println("Display the number of bushels of wheat in store: " + cropData.getWheatInStore());
           
   }
 
