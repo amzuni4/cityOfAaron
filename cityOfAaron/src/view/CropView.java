@@ -178,10 +178,35 @@ public static void plantCropsView(CropData cropData) {
         
     } 
   
- // The displayCropsReport method()
-// Purpose: runs the methods to display crops report
+  // The cropReportView method()
+// Purpose: displays all of the pertinent data from the CropData class
 // Parameters: none
 // Returns: none
+// Author: Amy Zuniga
+// Date Modified: December 11, 2018
+  public static void cropReportView()
+  {
+      CropData cd = new CropData();
+          System.out.println("Display the Year Number: " +  cd.getYear());
+       
+          System.out.println("Display the number of People who starved: " + cd.getNumberWhoDied());
+       
+          System.out.println("Display the amount of new individuals in the city: " + cd.getNewPeople());
+          
+          System.out.println("Display the current population: " + cd.getNewPeople());
+          
+          System.out.println("Get the number of acres of crop land owned by the city: " + cd.getAcresPlanted());
+         
+          System.out.println("Get the number of bushels per acre in this year's harvest: " + cd.getCropYield());
+          
+          System.out.println("Get the number of bushels harvested : " + cd.getHarvest());
+        
+          System.out.println("Display the number of bushels of wheat in store: " + cd.getWheatInStore());
+          
+  }
+
+
+
 
 // The runCropView method()
 // Purpose: runs the methods to manage the crops game
@@ -189,6 +214,8 @@ public static void plantCropsView(CropData cropData) {
 // Returns: none
 public static void runCropView()
 {
+    //call the cropReportView
+    cropReportView();
     // call the buyLandView( ) method
     buyLandView();
     //call the sellLandView by Amy Zuniga 11.30
@@ -200,3 +227,4 @@ public static void runCropView()
    
 }
 }
+
